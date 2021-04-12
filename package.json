@@ -39,7 +39,7 @@
     "publish": "lerna version --conventional-commits",
     "start": "lerna run start",
     "test": "jest",
-    "lint": "eslint **/*.ts",
+    "lint": "eslint .",
     "pretest": "jest --clearCache",
     "prettier:format": "prettier --write .",
     "prettier:verify": "prettier --check ."
