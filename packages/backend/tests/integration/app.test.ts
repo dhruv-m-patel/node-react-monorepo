@@ -7,7 +7,7 @@ describe('Integration: App', () => {
       .get('/')
       .then((res: any) => {
         expect(res.statusCode).toEqual(200);
-        expect(res.text).toEqual('<h1>Hello World!</h1>');
+        expect(res.body.message).toEqual('Hello World!');
       });
   });
 
@@ -16,7 +16,7 @@ describe('Integration: App', () => {
       .get('/health')
       .then((res: any) => {
         expect(res.statusCode).toEqual(200);
-        expect(res.text).toEqual('Server is healthy!');
+        expect(res.body.message).toEqual('Server is healthy!');
       });
   });
 });

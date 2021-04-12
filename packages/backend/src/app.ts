@@ -12,14 +12,12 @@ app.use(cors());
 app.use(compression());
 app.use(cookieParser());
 
-app.disable('x-powered-by');
-
-app.get('/', (req: Request, res: Response) => {
-  res.send(`<h1>${sayHello()}</h1>`);
+app.get('/api/message', (req: Request, res: Response) => {
+  res.json({ message: sayHello() });
 });
 
 app.get('/health', (req: Request, res: Response) => {
-  res.status(200).send('Server is healthy!');
+  res.status(200).json({ message: 'Server is healthy!' });
 });
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
