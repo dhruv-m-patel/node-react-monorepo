@@ -2,9 +2,9 @@ import app from '../../src/app';
 import request from 'supertest';
 
 describe('Integration: App', () => {
-  it('should return response for GET /', () => {
+  it('should return response for GET /api/message', () => {
     request(app)
-      .get('/')
+      .get('/api/message')
       .then((res: any) => {
         expect(res.statusCode).toEqual(200);
         expect(res.body.message).toEqual('Hello World!');
