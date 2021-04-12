@@ -1,0 +1,9 @@
+node_modules/
+build/
+.github/
+.env.example
+.env
+package.json
+package-lock.json
+readme.md
+tsconfig.json

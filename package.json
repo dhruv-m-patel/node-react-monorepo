@@ -1,0 +1,21 @@
+{
+    "name": "node-react-monorepo",
+    "private": true,
+    "version": "1.0.0",
+    "engines": {
+        "node": ">= 14.15.5",
+        "npm": ">= 6.14.11"
+    },
+    "devDependencies": {
+        "lerna": "^4.0.0"
+    },
+    "scripts": {
+        "clean": "lerna clean -y",
+        "bootstrap": "lerna bootstrap --hoist",
+        "build": "lerna run build",
+        "start": "lerna run start",
+        "test": "lerna run test",
+        "publish": "lerna version --conventional-commits",
+        "diff": "lerna diff"
+    }
+}
