@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "node-service",
   "version": "1.0.0",
   "description": "Backend built with node, express and typescript",
   "main": "build/index.js",
@@ -7,7 +7,7 @@
     "build": "tsc",
     "start": "node build/index.js",
     "start-dev": "ts-node src/index.ts",
-    "test": "jest",
+    "test": "jest --runInBand",
     "test:ci": "jest --silent --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
     "test:watch": "jest --watch"
   },

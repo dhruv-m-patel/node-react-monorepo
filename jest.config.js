@@ -1,13 +1,21 @@
+const baseConfig = require('./jest.config.base');
+
 module.exports = {
-  rootDir: __dirname,
-  collectCoverageFrom: ['packages/**/*.{js,ts,tsx}', '!**/*-test.{js,ts,tsx}'],
-  projects: ['<rootDir>/packages/*/jest.config.js'],
-  moduleNameMapper: {
-    '\\.css$': '<rootDir>/jest.mock.js',
-  },
-  clearMocks: true,
-  verbose: true,
-  transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
-  },
+  ...baseConfig,
+  projects: [
+    // '<rootDir>/packages/*/jest.config.js',
+    '<rootDir>/services/*/jest.config.js',
+    '<rootDir>/web/*/jest.config.js',
+  ],
+  roots: [
+    // '<rootDir>/packages',
+    '<rootDir>/services',
+    '<rootDir>/web',
+  ],
+  collectCoverageFrom: [
+    // 'packages/**/*.{js,jsx,ts,tsx}',
+    'services/**/*.{js,jsx,ts,tsx}',
+    'web/**/*.{js,jsx,ts,tsx}',
+  ],
+  moduleDirectories: ['node_modules'],
 };
