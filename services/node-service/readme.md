@@ -1,4 +1,4 @@
-# backend
+# node-service
 
 A basic node app running a server with an endpoint
 

@@ -10,7 +10,7 @@ jobs:
         with:
           node-version: '14.x'
       - name: Install packages
-        run: npm ci && npm run clean && npm run bootstrap
+        run: npm run bootstrap
       - name: Verify code formatting
         run: npm run prettier:verify
       - name: Lint Code
@@ -18,4 +18,4 @@ jobs:
       - name: Build app
         run: npm run build
       - name: Run tests
-        run: npm test
+        run: npm run test:ci

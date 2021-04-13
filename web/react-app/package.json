@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,8 +22,10 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest --runInBand",
+    "test:ci": "jest --silent --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [

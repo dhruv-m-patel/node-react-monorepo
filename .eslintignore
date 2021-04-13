@@ -9,3 +9,7 @@ readme.md
 tsconfig.json
 jest.config.js
 *.test.*
+lerna.json
+**/*/*.css
+**/*/*.svg
+**/*/public
