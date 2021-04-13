@@ -20,10 +20,10 @@ Access the backend api running on http://localhost:5000/api/message
 
 ## Packages
 
-Packages for the frontend and backend can be found in `packages` directory
+Packages for the frontend and backend can be found in following directories:
 
-- **frontend**: A create-react-app utilizing the typescript template making api calls using proxy setup
-- **backend**: A node-express server with a couple of endpoints and unit + integration tests
+- **web/react-app**: A create-react-app utilizing the typescript template making api calls using proxy setup
+- **services/node-service**: A node-express server with a couple of endpoints and unit + integration tests
 
 ## Monorepo commands
 
