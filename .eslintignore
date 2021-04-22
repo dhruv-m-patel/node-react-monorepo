@@ -13,3 +13,4 @@ lerna.json
 **/*/*.css
 **/*/*.svg
 **/*/public
+*.yaml
