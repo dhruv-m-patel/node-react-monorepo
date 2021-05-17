@@ -10,4 +10,8 @@ When you run `npm start` from the root, you will see API running at http://local
 
 ### Service contract validations
 
-To visualize request-response validations add `DEBUG=swagger-express-validator ` before start / start-dev commands
+The service requires to integrate API specifications written in OpenAPI v3 which can be located in `src/api/spec.yaml`.
+
+All requests and responses must be logged in API specifications.
+
+`express-openapi-validator` is used to integrate a middleware to comply with written API specifications and ensure requests and responses comply with it.
