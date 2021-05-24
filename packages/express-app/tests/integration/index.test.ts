@@ -109,7 +109,7 @@ describe('Integration tests: Service Contract Validations with OpenAPI', () => {
   );
 
   function configureTestAppWithInvalidOpenApiResponse(
-    apiSpecFilePath: string,
+    apiSpec: string,
     validateResponses: boolean
   ) {
     const router = express.Router();
@@ -118,7 +118,7 @@ describe('Integration tests: Service Contract Validations with OpenAPI', () => {
     });
     return configureApp({
       apiOptions: {
-        apiSpecFilePath,
+        apiSpec,
         specType: 'openapi',
         validateResponses: validateResponses,
       },
@@ -201,7 +201,7 @@ describe('Integration tests: Service Contract Validations with Swagger', () => {
   );
 
   function configureTestAppWithInvalidSwaggerResponse(
-    apiSpecFilePath: string,
+    apiSpec: string,
     validateResponses: boolean
   ) {
     const router = express.Router();
@@ -210,7 +210,7 @@ describe('Integration tests: Service Contract Validations with Swagger', () => {
     });
     return configureApp({
       apiOptions: {
-        apiSpecFilePath,
+        apiSpec,
         specType: 'swagger',
         validateResponses: validateResponses,
       },

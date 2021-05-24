@@ -24,9 +24,9 @@ interface AppOptions {
   setup: (app: express.Application) => void;
 }
 
-// process.on('exit', (code) => {
-//   console.log(`Process ${process.pid} is exiting with exit code ${code}`);
-// });
+process.on('exit', (code) => {
+  console.log(`Process ${process.pid} is exiting with exit code ${code}`);
+});
 
 interface ResponseError extends Error {
   // OpenAPI validations specify this; other errors do not.
