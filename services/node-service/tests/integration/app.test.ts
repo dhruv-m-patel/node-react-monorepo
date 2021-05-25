@@ -13,10 +13,10 @@ describe('Integration: App', () => {
 
   it('should return response for GET /health', () => {
     request(app)
-      .get('/api/health')
+      .get('/health')
       .then((res: any) => {
         expect(res.statusCode).toEqual(200);
-        expect(res.body.message).toEqual('Server is healthy!');
+        expect(res.body.message).toEqual('node-service is healthy!');
       });
   });
 });

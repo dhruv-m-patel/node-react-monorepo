@@ -24,7 +24,7 @@
     "husky": "^4.3.6",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1",
-    "typescript": "^4.2.4"
+    "typescript": "4.1.2"
   },
   "lint-staged": {
     "**/*": [
@@ -34,7 +34,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --hoist",
-    "build": "lerna run build",
+    "build": "lerna run build --stream",
     "clean": "lerna clean -y",
     "diff": "lerna diff",
     "publish": "lerna version --conventional-commits",
@@ -43,6 +43,7 @@
     "test": "lerna run test --stream",
     "test:ci": "lerna run test:ci --stream",
     "lint": "eslint .",
+    "lint:fix": "lerna run lint:fix --stream",
     "pretest": "jest --clearCache",
     "prettier:format": "prettier --write .",
     "prettier:verify": "prettier --check ."

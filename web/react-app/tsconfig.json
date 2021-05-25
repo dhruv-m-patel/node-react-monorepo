@@ -1,23 +1,22 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "rootDir": "./src",
+    "target": "ES6",
+    "module": "CommonJS",
+    "lib": ["ES2017", "DOM", "DOM.Iterable"],
+    "jsx": "react",
     "outDir": "./build",
-    "lib": ["dom", "dom.iterable", "es2020"],
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "isolatedModules": true,
-    "noEmit": true,
+    "rootDir": "./src",
     "strict": true,
-    "moduleResolution": "node"
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["node_modules/@types", "./typings/"]
   },
-  "include": ["src"],
-  "exclude": ["./tests", "node_modules"]
+  "include": ["./src"],
+  "exclude": ["./tests", "**/*.d.ts", "./src/**/*.test.tsx", "node_modules"]
 }
