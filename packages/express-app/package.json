@@ -5,8 +5,6 @@
   "main": "build/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node build/index.js",
-    "start-dev": "ts-node src/index.ts",
     "test": "jest --runInBand",
     "test:ci": "jest --silent --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
     "test:watch": "jest --watch"
