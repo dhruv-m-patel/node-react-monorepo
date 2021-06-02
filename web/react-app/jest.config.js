@@ -1,3 +1,4 @@
+const path = require('path');
 const JestConfig = require('../../jest.config.base');
 
 const { projects, ...baseConfig } = JestConfig;
@@ -11,7 +12,10 @@ module.exports = {
   globals: {
     NODE_ENV: 'test',
   },
-  testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$',
+  testMatch: [
+    path.join(__dirname, 'src/**/*.test.ts'),
+    path.join(__dirname, 'src/**/*.test.tsx'),
+  ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   setupFilesAfterEnv: [
     '@testing-library/jest-dom/extend-expect',

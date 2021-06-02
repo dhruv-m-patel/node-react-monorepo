@@ -30,27 +30,6 @@
         "arguments": ["root:./build-static"]
       }
     },
-    "cookie": {
-      "priority": 23,
-      "module": {
-        "name": "cookie-parser"
-      }
-    },
-    "jsonBody": {
-      "priority": 24,
-      "module": {
-        "name": "body-parser",
-        "method": "json"
-      }
-    },
-    "formBody": {
-      "priority": 25,
-      "module": {
-        "name": "body-parser",
-        "method": "urlencoded",
-        "arguments": [{ "extended": true }]
-      }
-    },
     "routes": {
       "priority": 26,
       "module": {
