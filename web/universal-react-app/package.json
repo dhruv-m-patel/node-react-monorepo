@@ -1,5 +1,5 @@
 {
-  "name": "react-app",
+  "name": "universal-react-app",
   "version": "1.0.0",
   "description": "A universal react app with material-ui and redux support",
   "main": "build/server/index.js",

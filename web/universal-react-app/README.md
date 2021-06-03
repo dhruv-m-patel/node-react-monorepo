@@ -1,4 +1,4 @@
-# react-app
+# universal-react-app
 
 A universal react app with Typescript, material-ui and redux support
 
