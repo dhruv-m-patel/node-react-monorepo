@@ -7,7 +7,12 @@ describe('HomePage', () => {
   test('it should render', () => {
     render(
       <MemoryRouter>
-        <HomePage />
+        <HomePage
+          messageFromApi="Hello World!"
+          isFetching={false}
+          error={undefined}
+          getApiMessage={() => {}}
+        />
       </MemoryRouter>
     );
     expect(screen).toBeDefined();

@@ -7,7 +7,7 @@
     "build": "tsc && webpack",
     "clean": "rimraf build ",
     "start": "node ./build/server/index.js",
-    "start-dev": "ts-node --prefer-ts-exts src/server/index.ts",
+    "start-dev": "ts-node src/server/index.ts",
     "start:watch": "npm run clean && npm run build && nodemon",
     "lint:ts": "eslint src/**/*.ts && eslint src/**/*.tsx",
     "lint:css": "stylelint \"./src/**/*.tsx\"",

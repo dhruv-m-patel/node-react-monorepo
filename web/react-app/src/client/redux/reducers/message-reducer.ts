@@ -1,15 +1,25 @@
-import { TypeAndPayload, MessageReducerStateType } from './index';
+import { TypeAndPayload } from './index';
 import { Actions } from '../actions';
+
+type MessagePayload = {
+  message: string;
+};
+
+export interface MessageReducerStateType {
+  isFetching: boolean;
+  error?: string;
+  data?: string;
+}
 
 export const defaultState: MessageReducerStateType = {
   isFetching: false,
   error: undefined,
-  data: [],
+  data: undefined,
 };
 
 export default function testReducer(
   state: MessageReducerStateType = defaultState,
-  action: TypeAndPayload<Array<string>> = { type: undefined }
+  action: TypeAndPayload<MessagePayload> = { type: undefined }
 ) {
   const { payload } = action;
   switch (action.type) {
@@ -24,7 +34,7 @@ export default function testReducer(
       return {
         ...state,
         isFetching: false,
-        data: payload,
+        data: payload?.message,
       };
 
     case Actions.Message.FetchDataFailed:

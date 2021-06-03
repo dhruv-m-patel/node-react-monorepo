@@ -34,7 +34,7 @@ export function generateRequest({
   };
 }
 
-export const fetchTestData = () =>
+export const getMessageFromApi = () =>
   generateRequest({
     endpoint: '/api/message',
     types: [

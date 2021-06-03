@@ -6,12 +6,6 @@ export interface TypeAndPayload<PayloadType> {
   payload?: PayloadType;
 }
 
-export interface MessageReducerStateType {
-  isFetching: boolean;
-  error?: string;
-  data?: Array<string>;
-}
-
 export default combineReducers({
   message: messageReducer,
 });
