@@ -46,6 +46,8 @@
     "lint:fix": "lerna run lint:fix --stream",
     "pretest": "jest --clearCache",
     "prettier:format": "prettier --write .",
-    "prettier:verify": "prettier --check ."
+    "prettier:verify": "prettier --check .",
+    "storybook": "lerna run storybook --stream",
+    "build-storybook": "lerna run build-storybook --stream"
   }
 }
