@@ -1,5 +1,6 @@
 node_modules/
 build/
+build-static/
 .github/
 .env.example
 .env
@@ -14,3 +15,5 @@ lerna.json
 **/*/*.svg
 **/*/public
 *.yaml
+**/*/config/
+**/*/webpack.config.js

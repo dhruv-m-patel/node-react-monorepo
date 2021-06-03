@@ -1,8 +1,8 @@
 openapi: '3.0.3'
 info:
   version: 1.0.0
-  title: 'node-service'
-  description: 'A simple backend service built with node.js and express'
+  title: node-service
+  description: A simple backend service built with node.js and express
 servers:
   - url: '/api'
 paths:
@@ -10,28 +10,10 @@ paths:
     get:
       tags:
         - Message
-      description: 'A test api call that will get a message from node service'
+      description: A test api call that will get a message from node service
       responses:
         200:
-          description: 'Service responded with a message'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MessageResponse'
-        default:
-          description: 'Internal server error'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-  /health:
-    get:
-      tags:
-        - Health
-      description: 'A test api call for health checking the node service'
-      responses:
-        200:
-          description: 'Service is healthy'
+          description: Service responded with a message
           content:
             application/json:
               schema:
@@ -46,17 +28,22 @@ components:
   schemas:
     Error:
       required:
-        - 'code'
-        - 'message'
+        - code
+        - message
       properties:
         code:
-          type: 'integer'
-          format: 'int32'
+          type: integer
+          format: int32
         message:
-          type: 'string'
+          type: string
+      example:
+        code: 500
+        message: 'Internal server error'
     MessageResponse:
       required:
-        - 'message'
+        - message
       properties:
         message:
-          type: 'string'
+          type: string
+      example:
+        message: 'Please pay your internet bill :)'

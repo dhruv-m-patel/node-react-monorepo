@@ -1,0 +1,52 @@
+{
+  "port": 8080,
+  "title": "React App",
+  "trustProxy": true,
+  "logging": {
+    "format": "combined",
+    "options": {}
+  },
+  "meddleware": {
+    "logger": {
+      "priority": 20,
+      "module": {
+        "name": "morgan",
+        "arguments": ["config:logging.format", "config:logging.options"]
+      }
+    },
+    "static": {
+      "priority": 21,
+      "module": {
+        "name": "express",
+        "method": "static",
+        "arguments": ["root:./static"]
+      }
+    },
+    "assets": {
+      "priority": 22,
+      "module": {
+        "name": "express",
+        "method": "static",
+        "arguments": ["root:./build-static"]
+      }
+    },
+    "routes": {
+      "priority": 26,
+      "module": {
+        "name": "express-enrouten",
+        "arguments": [
+          {
+            "directory": "path:./server/routes"
+          }
+        ]
+      }
+    },
+    "renderPage": {
+      "priority": 100,
+      "module": {
+        "name": "path:./server/middleware/renderPage",
+        "method": "default"
+      }
+    }
+  }
+}
