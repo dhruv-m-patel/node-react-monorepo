@@ -20,20 +20,19 @@ Access the backend api running on http://localhost:5000/api/message
 
 ## Packages
 
-Packages for the frontend and backend can be found in following directories:
-
-- **web/react-app**: A create-react-app utilizing the typescript template making api calls using proxy setup
-- **services/node-service**: A node-express server with a couple of endpoints and unit + integration tests
+- **packages**: Packages reusable across services or frontend.
+- **react-app**: A universal react app with styled-component, redux and configuration hydration support.
+- **microservices**: Backend microservices.
 
 ### Adding new dependencies in a specific package
 
 - To add a new dependency into a single package: `npx lerna add npmPackageName --scope=packageName`
 
-  e.g. `npx lerna add dotenv --scope=auth-service`
+  e.g. `npx lerna add dotenv --scope=node-service`
 
 - To add a new dependency into multiple packages: `npx lerna add npmPackageName --scope={packageName1, packageName2}`
 
-  e.g. `npx lerna add dotenv --scope={auth-service,high-fives-service}`
+  e.g. `npx lerna add dotenv --scope={node-service,react-app}`
 
 - To remove a dependency, edit package.json removing the line for the dependency and then run `npm run bootstrap`
 
