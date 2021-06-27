@@ -32,7 +32,6 @@ const Container = styled.div`
   align-items: center;
   height: 70px;
   margin-bottom: 1rem;
-  box-shadow: 0 3px 3px grey;
 `;
 
 export default function Navbar({
@@ -43,7 +42,7 @@ export default function Navbar({
     <Container>
       <h1>
         <AppLogo src="/images/logo.svg" />
-        React App
+        Node React Monorepo
       </h1>
       <DarkModeTrigger
         style={{
