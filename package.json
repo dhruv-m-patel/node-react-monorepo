@@ -48,6 +48,7 @@
     "prettier:format": "prettier --write .",
     "prettier:verify": "prettier --check .",
     "storybook": "lerna run storybook --stream",
-    "build-storybook": "lerna run build-storybook --stream"
+    "build-storybook": "lerna run build-storybook --stream",
+    "postinstall": "npm run bootstrap"
   }
 }
