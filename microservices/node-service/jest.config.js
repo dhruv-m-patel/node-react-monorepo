@@ -5,7 +5,7 @@ const { projects, ...baseConfig } = JestConfig;
 
 module.exports = {
   ...baseConfig,
-  coveragePathIgnorePatterns: ['/node_modules/', path.join(__dirname, 'build')],
+  coveragePathIgnorePatterns: ['node_modules', 'build', '../../packages'],
   testEnvironment: 'node',
   testMatch: [path.join(__dirname, 'tests/**/*.test.ts')],
 };
