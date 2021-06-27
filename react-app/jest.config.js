@@ -9,6 +9,7 @@ module.exports = {
   globals: {
     NODE_ENV: 'test',
   },
+  testEnvironment: 'jsdom',
   moduleFileExtensions: ['js', 'jsx', 'json'],
   moduleDirectories: ['node_modules'],
   setupFilesAfterEnv: [path.resolve(__dirname, './jest.setup.js')],
