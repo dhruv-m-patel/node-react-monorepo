@@ -4,8 +4,7 @@
     "standard",
     "eslint:recommended",
     "plugin:react/recommended",
-    "prettier",
-    "prettier/react"
+    "prettier"
   ],
   "settings": {
     "react": {
