@@ -18,8 +18,8 @@
     "pretest": "jest --clearCache",
     "prettier:format": "prettier --write .",
     "prettier:verify": "prettier --check .",
-    "test": "jest",
-    "ci:test": "jest --coverage",
+    "test": "jest --runInBand",
+    "test:ci": "jest --silent --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
     "storybook": "start-storybook -p 3001",
     "build-storybook": "build-storybook"
   },

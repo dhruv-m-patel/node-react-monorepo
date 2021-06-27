@@ -1,10 +1,7 @@
 const path = require('path');
-const JestConfig = require('../../jest.config.base');
-
-const { projects, ...baseConfig } = JestConfig;
 
 module.exports = {
-  ...baseConfig,
+  verbose: false,
   rootDir: './src',
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
@@ -14,5 +11,5 @@ module.exports = {
   },
   moduleFileExtensions: ['js', 'jsx', 'json'],
   moduleDirectories: ['node_modules'],
-  setupFilesAfterEnv: ['./jest.setup.js'],
+  setupFilesAfterEnv: [path.resolve(__dirname, './jest.setup.js')],
 };
