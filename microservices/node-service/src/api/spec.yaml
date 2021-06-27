@@ -1,0 +1,49 @@
+openapi: '3.0.3'
+info:
+  version: 1.0.0
+  title: node-service
+  description: A simple backend service built with node.js and express
+servers:
+  - url: '/api'
+paths:
+  /message:
+    get:
+      tags:
+        - Message
+      description: A test api call that will get a message from node service
+      responses:
+        200:
+          description: Service responded with a message
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
+        default:
+          description: 'Internal server error'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Error:
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        message:
+          type: string
+      example:
+        code: 500
+        message: 'Internal server error'
+    MessageResponse:
+      required:
+        - message
+      properties:
+        message:
+          type: string
+      example:
+        message: 'Please pay your internet bill :)'
