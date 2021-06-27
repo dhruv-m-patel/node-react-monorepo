@@ -1,0 +1,16 @@
+{
+  "themes": {
+    "dark": {
+      "pageBackgroundColor": "#282c34",
+      "textColor": "#fff",
+      "link": "#61dafb",
+      "text": "#fff"
+    },
+    "light": {
+      "pageBackgroundColor": "#fff",
+      "textColor": "#000",
+      "link": "blue",
+      "text": "#000"
+    }
+  }
+}
