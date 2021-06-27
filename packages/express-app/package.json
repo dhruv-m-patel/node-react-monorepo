@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An express server to run web or api applications",
   "main": "build/index.js",
+  "private": true,
   "scripts": {
     "build": "tsc",
     "test": "jest --runInBand",

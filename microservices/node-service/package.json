@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Backend built with node, express and typescript",
   "main": "build/index.js",
+  "private": true,
   "scripts": {
     "build": "tsc && copyfiles -u 1 src/api/*.yaml build",
     "start": "node build/index.js",
