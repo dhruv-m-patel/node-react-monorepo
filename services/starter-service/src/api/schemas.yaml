@@ -1,0 +1,46 @@
+HealthCheckResponse:
+  type: object
+  required:
+    - serviceName
+    - status
+    - version
+  properties:
+    serviceName:
+      type: string
+    status:
+      type: string
+    uptime:
+      type: number
+    timestamp:
+      type: string
+    version:
+      type: string
+    pid:
+      type: integer
+      format: int32
+
+MessageResponse:
+  type: object
+  required:
+    - message
+  properties:
+    message:
+      type: string
+    extraInfo:
+      type: array
+      items:
+        $ref: '#/ErrorMessage'
+
+ErrorMessage:
+  type: object
+  required:
+    - message
+  properties:
+    type:
+      type: string
+    message:
+      type: string
+    property:
+      type: string
+    key:
+      type: string
