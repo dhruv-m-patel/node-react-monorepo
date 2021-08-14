@@ -3,11 +3,9 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./build",
-    "lib": ["es2020"],
+    "types": ["node"],
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "typeRoots": ["node_modules/@types", "./typings"]
+    "typeRoots": ["node_modules/@types", "node_modules/@dhruv-m-patel"]
   },
   "include": ["./src"],
   "exclude": ["./tests", "node_modules"]

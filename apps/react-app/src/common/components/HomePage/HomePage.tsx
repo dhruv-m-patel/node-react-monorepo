@@ -216,7 +216,7 @@ export default function HomePage() {
         <ul>
           <li>
             <a
-              href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/react-app/src/server/middleware/renderPage.ts"
+              href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/apps/react-app/src/server/middleware/renderPage.tsx"
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -225,7 +225,7 @@ export default function HomePage() {
           </li>
           <li>
             <a
-              href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/react-app/src/client/renderApp.ts"
+              href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/apps/react-app/src/client/renderApp.tsx"
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -234,7 +234,7 @@ export default function HomePage() {
           </li>
           <li>
             <a
-              href="https://github.com/dhruv-m-patel/node-react-monorepo/tree/master/react-app/src/client/redux"
+              href="https://github.com/dhruv-m-patel/node-react-monorepo/tree/master/apps/react-app/src/client/redux"
               target="_blank"
               rel="noreferrer noopener"
             >
@@ -243,7 +243,7 @@ export default function HomePage() {
           </li>
           <li>
             <a
-              href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/react-app/src/client/redux/actions.ts#L37"
+              href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/apps/react-app/src/client/redux/actions.ts#L37"
               target="_blank"
               rel="noreferrer noopener"
             >
