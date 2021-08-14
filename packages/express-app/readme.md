@@ -1,8 +1,8 @@
 # @dhruv-m-patel/express-app
 
-An express server to run web or api applications
+An express server to run services
 
-Built with express and typescript providing some extra arms to web and api applications with the following:
+Built with express and typescript providing some extra arms to services with the following:
 
 - Configure apps with service discovery through Swagger or OpenAPI specs and enable request-response validations
 - Enables health check by default for an application to provide monitoring capabilities

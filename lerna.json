@@ -1,4 +1,4 @@
 {
-  "packages": ["packages/*", "microservices/*", "react-app"],
+  "packages": ["packages/*", "services/*", "apps/*"],
   "version": "1.0.0"
 }

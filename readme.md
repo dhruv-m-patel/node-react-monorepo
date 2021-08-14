@@ -21,8 +21,8 @@ Access the backend api running on http://localhost:5000/api/message
 ## Packages
 
 - **packages**: Packages reusable across services or frontend.
-- **react-app**: A universal react app with styled-component, redux and configuration hydration support.
-- **microservices**: Backend microservices.
+- **apps**: Frontend apps with styled-component, redux and configuration hydration support.
+- **services**: Backend services.
 
 ### Adding new dependencies in a specific package
 
