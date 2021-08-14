@@ -1,24 +1,3 @@
-HealthCheckResponse:
-  type: object
-  required:
-    - serviceName
-    - status
-    - version
-  properties:
-    serviceName:
-      type: string
-    status:
-      type: string
-    uptime:
-      type: number
-    timestamp:
-      type: string
-    version:
-      type: string
-    pid:
-      type: integer
-      format: int32
-
 MessageResponse:
   type: object
   required:

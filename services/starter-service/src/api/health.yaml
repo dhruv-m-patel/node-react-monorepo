@@ -9,7 +9,7 @@ get:
       content:
         application/json:
           schema:
-            $ref: 'schemas.yaml#/HealthCheckResponse'
+            $ref: 'schemas.yaml#/MessageResponse'
     default:
       description: Internal server error
       content:

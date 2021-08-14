@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import { Page, Text, StyleVariables } from '@dhruv-m-patel/react-components';
-
-interface HomePageProps {
-  getApiMessage: Function;
-  messageFromApi?: string;
-  isFetching: boolean;
-  error?: string;
-}
 
 const useStyles = makeStyles(() => ({
   title: {
@@ -86,22 +79,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export default function HomePage({
-  messageFromApi,
-  isFetching = false,
-  error,
-  getApiMessage,
-}: HomePageProps) {
+export default function HomePage() {
   const classes = useStyles();
-  const [message, setMessage] = useState<string | undefined>();
-
-  useEffect(() => {
-    if (!isFetching && !error && !messageFromApi) {
-      getApiMessage();
-    } else if (messageFromApi && !message) {
-      setMessage(messageFromApi);
-    }
-  }, [messageFromApi, isFetching, error, message, getApiMessage]);
 
   return (
     <Page>

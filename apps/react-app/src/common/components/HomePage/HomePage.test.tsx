@@ -7,14 +7,11 @@ describe('HomePage', () => {
   test('it should render', () => {
     render(
       <MemoryRouter>
-        <HomePage
-          messageFromApi="Hello World!"
-          isFetching={false}
-          error={undefined}
-          getApiMessage={() => {}}
-        />
+        <HomePage />
       </MemoryRouter>
     );
-    expect(screen.getByText(/Hello World/)).toBeInTheDocument();
+    expect(
+      screen.getByText(/Welcome to Node React Monorepo/)
+    ).toBeInTheDocument();
   });
 });

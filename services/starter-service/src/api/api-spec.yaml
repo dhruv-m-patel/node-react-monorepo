@@ -4,9 +4,7 @@ info:
   title: starter-service
   description: Service contract for starter-service with OpenApi 3.0 specifications
 servers:
-  - url: 'http://localhost:8000/starter/api'
   - url: 'http://localhost:8999/api'
-  - url: 'https://wildbreeze-qa01.ecompliance.com/starter/api'
 tags:
   - name: Health
     description: Call to monitor the health of the service

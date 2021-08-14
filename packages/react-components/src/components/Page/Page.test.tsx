@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import { createTheme } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Page from './Page';
-import StyleVariables from '../../styles/variables';
+import { StyleVariables } from '../../styles/variables';
 
 describe('Page', () => {
   test('it renders with default theme', () => {
