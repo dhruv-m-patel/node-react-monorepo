@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
 import { Page, Text, StyleVariables } from '@dhruv-m-patel/react-components';
 
 interface HomePageProps {
@@ -21,7 +20,6 @@ const useStyles = makeStyles(() => ({
     color: StyleVariables.colors.red,
   },
   main: {
-    padding: '5rem 0',
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
@@ -30,16 +28,17 @@ const useStyles = makeStyles(() => ({
   },
   cardAnchorLink: {
     margin: '1rem',
-    padding: '1.5rem',
+    padding: '1rem',
     textAlign: 'left',
     color: 'inherit',
     textDecoration: 'none',
-    border: '3px solid #eaeaea',
+    border: `2px solid ${StyleVariables.colors.darkGrey}`,
     borderRadius: '10px',
     transition: 'color 0.15s ease, border-color 0.15s ease',
     width: '45%',
+    height: '180px',
     '&:hover, &:focus, &:active': {
-      borderColor: '#0070f3',
+      borderColor: StyleVariables.colors.blue,
     },
     '& h2': {
       margin: '0 0 1rem 0',
@@ -63,6 +62,9 @@ const useStyles = makeStyles(() => ({
     flexWrap: 'wrap',
     maxWidth: '800px',
     marginTop: '3rem',
+    '& a > h2': {
+      color: StyleVariables.colors.blue,
+    },
   },
   titleH1: {
     margin: 0,
@@ -105,8 +107,7 @@ export default function HomePage({
     <Page>
       <div className={classes.main}>
         <Text as="h1" className={classes.titleH1}>
-          Welcome to{' '}
-          <a href="https://styledreactapp.herokuapp.com">Node React Monorepo</a>
+          Welcome to Node React Monorepo
         </Text>
         <br />
         <br />
@@ -119,19 +120,31 @@ export default function HomePage({
           <a
             className={classes.cardAnchorLink}
             href="https://www.npmjs.com/package/redux-api-middleware"
+            target="_blank"
+            rel="noreferrer noopener"
           >
-            <h2>Monorepo</h2>
+            <Text as="h2">Monorepo</Text>
             <Text as="p">
               Manage your frontend, backend and packages in one place with Lerna
             </Text>
           </a>
 
-          <a className={classes.cardAnchorLink} href="https://expressjs.com/">
+          <a
+            className={classes.cardAnchorLink}
+            href="https://expressjs.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <Text as="h2">Express</Text>
             <Text as="p">Write microservices with node and express</Text>
           </a>
 
-          <a className={classes.cardAnchorLink} href="https://reactjs.org/">
+          <a
+            className={classes.cardAnchorLink}
+            href="https://reactjs.org/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <Text as="h2">React</Text>
             <Text as="p">
               Write frontend applications using React (extended with SSR support
@@ -142,6 +155,8 @@ export default function HomePage({
           <a
             className={classes.cardAnchorLink}
             href="https://reactrouter.com/web/guides/quick-start"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             <Text as="h2">React Router</Text>
             <Text as="p">
@@ -153,6 +168,8 @@ export default function HomePage({
           <a
             className={classes.cardAnchorLink}
             href="https://www.npmjs.com/package/confit"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             <Text as="h2">Configuration</Text>
             <Text as="p">
@@ -163,12 +180,19 @@ export default function HomePage({
           <a
             className={classes.cardAnchorLink}
             href="https://styled-components.com/"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             <Text as="h2">Styled Components</Text>
             <Text as="p">Style your React components with a breeze</Text>
           </a>
 
-          <a className={classes.cardAnchorLink} href="https://redux.js.org/">
+          <a
+            className={classes.cardAnchorLink}
+            href="https://redux.js.org/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <Text as="h2">Redux</Text>
             <Text as="p">Manage your application state with Redux</Text>
           </a>
@@ -176,6 +200,8 @@ export default function HomePage({
           <a
             className={classes.cardAnchorLink}
             href="https://www.npmjs.com/package/redux-api-middleware"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             <Text as="h2">Redux API Middleware</Text>
             <Text as="p">
@@ -186,6 +212,8 @@ export default function HomePage({
           <a
             className={classes.cardAnchorLink}
             href="https://storybook.js.org/docs/react/get-started/introduction"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             <Text as="h2">Storybook</Text>
             <Text as="p">Visualize your react components using Storybook</Text>
@@ -194,6 +222,8 @@ export default function HomePage({
           <a
             className={classes.cardAnchorLink}
             href="https://enzymejs.github.io/enzyme/"
+            target="_blank"
+            rel="noreferrer noopener"
           >
             <Text as="h2">Jest + Enzyme</Text>
             <Text as="p">Test your react components using Jest and Enzyme</Text>
@@ -206,28 +236,39 @@ export default function HomePage({
         </Text>
         <ul>
           <li>
-            <a href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/react-app/src/server/middleware/renderPage.js">
+            <a
+              href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/react-app/src/server/middleware/renderPage.ts"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               React SSR Middleware
             </a>
           </li>
           <li>
-            <a href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/react-app/src/client/renderApp.js">
+            <a
+              href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/react-app/src/client/renderApp.ts"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               Client App Entrypoint
             </a>
           </li>
           <li>
-            <a href="https://github.com/dhruv-m-patel/node-react-monorepo/tree/master/react-app/src/client/redux">
+            <a
+              href="https://github.com/dhruv-m-patel/node-react-monorepo/tree/master/react-app/src/client/redux"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               Redux Integration
             </a>
           </li>
           <li>
-            <a href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/react-app/src/client/redux/actions.js#L24">
+            <a
+              href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/react-app/src/client/redux/actions.ts#L37"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
               Example server api call with redux-api-middleware
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/dhruv-m-patel/node-react-monorepo/blob/master/react-app/src/common/components/ReduxExample/ReduxExample.jsx">
-              Example component with Redux Integration
             </a>
           </li>
         </ul>
