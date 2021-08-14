@@ -5,7 +5,7 @@ const { projects, ...baseConfig } = JestConfig;
 
 module.exports = {
   ...baseConfig,
-  displayName: '@dhruv-m-patel/express-app',
+  displayName: 'express-app',
   clearMocks: true,
   coveragePathIgnorePatterns: ['/node_modules/', path.join(__dirname, 'build')],
   testEnvironment: 'node',

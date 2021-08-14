@@ -1,6 +1,10 @@
 import cluster from 'cluster';
 import os from 'os';
-import express, { Request, Response, NextFunction } from 'express';
+import express, {
+  Request as ExpressRequest,
+  Response,
+  NextFunction,
+} from 'express';
 import cors from 'cors';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
@@ -13,8 +17,7 @@ import * as ExpressOpenApiValidator from 'express-openapi-validator';
 import process from 'process';
 import jsyaml from 'js-yaml';
 import yamljs from 'yamljs';
-
-interface AppOptions {
+export interface AppOptions {
   appName?: string;
   apiOptions?: {
     apiSpec: string;
@@ -24,13 +27,13 @@ interface AppOptions {
   setup: (app: express.Application) => void;
 }
 
-process.on('exit', (code) => {
-  console.log(`Process ${process.pid} is exiting with exit code ${code}`);
-});
-
-interface ResponseError extends Error {
+export interface ResponseError extends Error {
   // OpenAPI validations specify this; other errors do not.
   status?: number;
+}
+
+export interface Request extends ExpressRequest {
+  id?: string;
 }
 
 function finalErrorHandler(
@@ -52,6 +55,10 @@ function finalErrorHandler(
     }
   }
 }
+
+process.on('exit', (code) => {
+  console.log(`Process ${process.pid} is exiting with exit code ${code}`);
+});
 
 export function configureApp(options: AppOptions): express.Application {
   const app: express.Application = express();
