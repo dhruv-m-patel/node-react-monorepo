@@ -1,18 +1,19 @@
 import path from 'path';
-import { Application, Request, Response } from 'express';
 import { configureApp } from '@dhruv-m-patel/express-app';
-import { sayHello } from './models/hello';
+import healthRouter from './routes/health';
+import messageRouter from './routes/message';
 
-const app: Application = configureApp({
-  appName: 'node-service',
+const apiSpec = path.join(__dirname, '../build/api/api-spec.yaml');
+
+const app = configureApp({
   apiOptions: {
-    apiSpec: path.join(__dirname, './api/spec.yaml'),
+    apiSpec,
     specType: 'openapi',
+    validateResponses: true,
   },
-  setup: (app: Application) => {
-    app.get('/api/message', (req: Request, res: Response) => {
-      res.json({ message: sayHello() });
-    });
+  setup: (theApp) => {
+    theApp.use('/api/health', healthRouter);
+    theApp.use('/api/message', messageRouter);
   },
 });
 
