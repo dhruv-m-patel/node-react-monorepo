@@ -1,0 +1,41 @@
+{
+  "name": "@dhruv-m-patel/react-package",
+  "version": "1.0.0",
+  "description": "A boilerplate package for writing new packages within this monorepo",
+  "keywords": [
+    "react-package"
+  ],
+  "main": "build/cjs/index.js",
+  "module": "build/esm/index.js",
+  "types": "build/esm/index.d.ts",
+  "private": true,
+  "scripts": {
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir build/cjs",
+    "build": "npm run build:esm && npm run build:cjs",
+    "clean": "rimraf build ",
+    "lint:ts": "eslint src/**/*.ts",
+    "lint": "npm run lint:ts && npm run lint:css",
+    "lint:fix": "eslint --fix .",
+    "prettier:verify": "prettier --check .",
+    "test": "jest --runInBand --passWithNoTests",
+    "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^11.2.2",
+    "@types/jest": "^26.0.19",
+    "@types/node": "^14.14.16",
+    "@types/react": "^17.0.0",
+    "eslint-plugin-react": "7.24.0",
+    "jest": "26.6.3",
+    "jest-junit": "^12.2.0",
+    "react": "^16.14.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.4",
+    "typescript": "4.1.3"
+  },
+  "peerDependencies": {
+    "react": "^16.14.0"
+  }
+}
