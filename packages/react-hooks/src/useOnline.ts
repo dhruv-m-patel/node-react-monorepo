@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react';
 
+/**
+ * A custom hook to know when the user is online having an internet connection
+ * @returns true if user has internet connection, false otherwise
+ */
 export default function useOnline() {
   const [online, setOnline] = useState(navigator.onLine);
 
