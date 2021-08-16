@@ -6,6 +6,8 @@ import useInterval from './useInterval';
 import useKeyPress from './useKeyPress';
 import usePreviousValue from './usePreviousValue';
 import useToggle from './useToggle';
+import useFetch from './useFetch';
+import useOnline from './useOnline';
 
 export {
   useStateFromInput,
@@ -16,4 +18,6 @@ export {
   useKeyPress,
   usePreviousValue,
   useToggle,
+  useOnline,
+  useFetch,
 };
