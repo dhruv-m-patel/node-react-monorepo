@@ -9,6 +9,7 @@ import useToggle from './useToggle';
 import useFetch from './useFetch';
 import useOnline from './useOnline';
 import useGeolocation from './useGeolocation';
+import useTimeout from './useTimeout';
 
 export {
   useStateFromInput,
@@ -22,4 +23,5 @@ export {
   useOnline,
   useFetch,
   useGeolocation,
+  useTimeout,
 };
