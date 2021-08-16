@@ -8,6 +8,7 @@ import usePreviousValue from './usePreviousValue';
 import useToggle from './useToggle';
 import useFetch from './useFetch';
 import useOnline from './useOnline';
+import useGeolocation from './useGeolocation';
 
 export {
   useStateFromInput,
@@ -20,4 +21,5 @@ export {
   useToggle,
   useOnline,
   useFetch,
+  useGeolocation,
 };
