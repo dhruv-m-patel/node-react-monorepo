@@ -6,7 +6,8 @@
     "build": "rimraf ./build && tsc",
     "test": "jest --runInBand --passWithNoTests",
     "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
-    "test:changed": "jest --silent --passWithNoTests --runInBand --onlyChanged"
+    "test:changed": "jest --silent --passWithNoTests --runInBand --onlyChanged",
+    "npm:update": "npm update"
   },
   "devDependencies": {
     "@loadable/webpack-plugin": "^5.14.0",

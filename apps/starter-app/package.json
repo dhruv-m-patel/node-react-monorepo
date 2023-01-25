@@ -16,7 +16,8 @@
     "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
     "test:changed": "jest --runInBand --onlyChanged",
     "storybook": "start-storybook -p 6000",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "npm:update": "npm update"
   },
   "dependencies": {
     "@dhruv-m-patel/react-components": "^1.0.0",

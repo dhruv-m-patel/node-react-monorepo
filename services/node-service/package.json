@@ -10,7 +10,8 @@
     "start-dev": "nodemon",
     "test": "jest --runInBand",
     "test:ci": "jest --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "npm:update": "npm update"
   },
   "dependencies": {
     "@dhruv-m-patel/express-app": "^1.0.0"
