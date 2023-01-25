@@ -1,4 +1,4 @@
-const baseConfig = require('./jest.config.base');
+const baseConfig = require('./jest.config');
 
 module.exports = {
   clearMocks: true,
@@ -16,7 +16,6 @@ module.exports = {
     '<rootDir>/apps/*/jest.config.js',
   ],
   rootDir: __dirname,
-  roots: ['<rootDir>/packages', '<rootDir>/services', '<rootDir>/apps'],
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
   },

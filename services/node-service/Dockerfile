@@ -7,7 +7,6 @@ COPY ./package.json .
 COPY ./lerna.json .
 COPY tsconfig.json .
 COPY jest.config.js .
-COPY jest.config.base.js .
 COPY .env.example .env
 
 RUN npm install
