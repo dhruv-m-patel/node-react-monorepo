@@ -6,6 +6,6 @@ import { Promise as BluebirdPromise } from 'bluebird';
 dotenv.config();
 global.Promise = BluebirdPromise;
 
-const port: number = Number(process.env.STARTER_APP_PORT) || 3000;
+const port: number = Number(process.env.REACT_APP_PORT) || 3000;
 
 runApp(app, { appName: 'Starter App', port });
