@@ -1,7 +1,8 @@
 {
   "name": "node-service",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "build/index.js",
+  "private": true,
   "scripts": {
     "bundle:api": "swagger-cli bundle -t yaml -o build/api/api-spec.yaml src/api/api-spec.yaml",
     "build": "rimraf ./build && tsc && yarn run bundle:api",
@@ -13,7 +14,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@dhruv-m-patel/express-app": "1.0.0"
+    "@dhruv-m-patel/express-app": "^1.1.0"
   },
   "devDependencies": {
     "@apidevtools/swagger-cli": "^4.0.4",
