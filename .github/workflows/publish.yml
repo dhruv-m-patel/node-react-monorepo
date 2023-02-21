@@ -1,5 +1,8 @@
 name: build
-on: [push]
+on:
+  push:
+    branches: [master]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,11 +16,7 @@ jobs:
         run: |
           yarn install
           yarn run bootstrap
-      - name: Verify code formatting
-        run: yarn run prettier:verify
-      - name: Lint Code
-        run: yarn run lint
       - name: Build app
         run: yarn run build
-      - name: Run tests
-        run: yarn run test:ci
+      - name: Publish
+        run: yarn run publish

@@ -1,6 +1,6 @@
 {
   "name": "@dhruv-m-patel/react-components",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A library of react components for frontend projects",
   "keywords": [
     "react",
@@ -13,21 +13,19 @@
   "scripts": {
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir build/cjs",
-    "build": "npm run build:esm && npm run build:cjs",
+    "build": "yarn run build:esm && yarn run build:cjs",
     "clean": "rimraf build ",
     "lint:ts": "eslint src/**/*.ts && eslint src/**/*.tsx",
     "lint:css": "stylelint \"./src/**/*.tsx\"",
-    "lint": "npm run lint:ts && npm run lint:css",
+    "lint": "yarn run lint:ts && yarn run lint:css",
     "lint:fix": "eslint --fix .",
     "prettier:verify": "prettier --check .",
     "test": "jest --runInBand",
     "test:ci": "jest --silent --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
     "test:changed": "jest --runInBand --onlyChanged",
     "storybook": "start-storybook -p 6789",
-    "build-storybook": "build-storybook",
-    "npm:update": "npm update"
+    "build-storybook": "build-storybook"
   },
-  "dependencies": {},
   "devDependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
@@ -39,7 +37,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^11.2.2",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.14.9",
+    "@types/node": "^18.14.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "clsx": "^1.1.1",

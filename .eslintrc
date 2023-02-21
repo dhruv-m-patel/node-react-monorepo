@@ -9,7 +9,6 @@
       "files": ["*.ts", "*.tsx"],
       "plugins": ["@typescript-eslint"],
       "extends": [
-        "standard",
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "prettier"

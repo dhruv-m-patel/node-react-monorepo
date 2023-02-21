@@ -1,6 +1,6 @@
 {
   "name": "@dhruv-m-patel/express-app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An express server to run web or api applications",
   "main": "build/index.js",
   "private": true,
@@ -8,8 +8,7 @@
     "build": "tsc",
     "test": "jest --runInBand",
     "test:ci": "jest --silent --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
-    "test:watch": "jest --watch",
-    "npm:update": "npm update"
+    "test:watch": "jest --watch"
   },
   "author": "Dhruv Patel <dhruv.codelab@gmail.com>",
   "license": "ISC",
@@ -33,7 +32,7 @@
     "@types/express": "^4.17.12",
     "@types/jest": "^26.0.23",
     "@types/js-yaml": "^4.0.1",
-    "@types/node": "^15.14.9",
+    "@types/node": "^18.14.0",
     "@types/swagger-express-validator": "^0.0.0",
     "@types/swagger-ui-dist": "^3.30.0",
     "@types/uuid": "^8.3.0",

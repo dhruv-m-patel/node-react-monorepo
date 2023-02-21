@@ -17,6 +17,7 @@ import * as ExpressOpenApiValidator from 'express-openapi-validator';
 import process from 'process';
 import jsyaml from 'js-yaml';
 import yamljs from 'yamljs';
+
 export interface AppOptions {
   appName?: string;
   apiOptions?: {

@@ -6,18 +6,17 @@
   "scripts": {
     "build": "tsc && webpack",
     "clean": "rimraf build ",
-    "start:watch": "npm run clean && npm run build && nodemon",
+    "start:watch": "yarn run clean && yarn run build && nodemon",
     "lint:ts": "eslint src/**/*.ts && eslint src/**/*.tsx",
     "lint:css": "stylelint \"./src/**/*.tsx\"",
-    "lint": "npm run lint:ts && npm run lint:css",
+    "lint": "yarn run lint:ts && yarn run lint:css",
     "lint:fix": "eslint --fix .",
     "prettier:verify": "prettier --check .",
     "test": "jest --runInBand --passWithNoTests",
     "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
     "test:changed": "jest --runInBand --onlyChanged",
     "storybook": "start-storybook -p 6000",
-    "build-storybook": "build-storybook",
-    "npm:update": "npm update"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@dhruv-m-patel/react-components": "^1.0.0",

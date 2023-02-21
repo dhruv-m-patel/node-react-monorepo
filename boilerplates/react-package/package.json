@@ -12,15 +12,14 @@
   "scripts": {
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir build/cjs",
-    "build": "npm run build:esm && npm run build:cjs",
+    "build": "yarn run build:esm && yarn run build:cjs",
     "clean": "rimraf build ",
     "lint:ts": "eslint src/**/*.ts",
-    "lint": "npm run lint:ts && npm run lint:css",
+    "lint": "yarn run lint:ts && yarn run lint:css",
     "lint:fix": "eslint --fix .",
     "prettier:verify": "prettier --check .",
     "test": "jest --runInBand --passWithNoTests",
-    "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
-    "npm:update": "npm update"
+    "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
