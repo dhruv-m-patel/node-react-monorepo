@@ -13,22 +13,20 @@
   "scripts": {
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir build/cjs",
-    "build": "npm run build:esm && npm run build:cjs",
+    "build": "yarn run build:esm && yarn run build:cjs",
     "clean": "rimraf build ",
     "lint:ts": "eslint src/**/*.ts",
-    "lint": "npm run lint:ts && npm run lint:css",
+    "lint": "yarn run lint:ts && yarn run lint:css",
     "lint:fix": "eslint --fix .",
     "prettier:verify": "prettier --check .",
     "test": "jest --runInBand --passWithNoTests",
-    "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
-    "npm:update": "npm update"
+    "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary"
   },
-  "dependencies": {},
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^11.2.2",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.14.9",
+    "@types/node": "^18.14.0",
     "@types/react": "^17.0.0",
     "eslint-plugin-react": "7.24.0",
     "fast-deep-equal": "^3.1.3",

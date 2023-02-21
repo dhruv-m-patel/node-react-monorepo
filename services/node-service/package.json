@@ -4,17 +4,16 @@
   "main": "build/index.js",
   "scripts": {
     "bundle:api": "swagger-cli bundle -t yaml -o build/api/api-spec.yaml src/api/api-spec.yaml",
-    "build": "rimraf ./build && tsc && npm run bundle:api",
-    "pretest": "npm run bundle:api",
+    "build": "rimraf ./build && tsc && yarn run bundle:api",
+    "pretest": "yarn run bundle:api",
     "start": "node -r dotenv/config build/index.js",
     "start-dev": "nodemon",
     "test": "jest --runInBand",
     "test:ci": "jest --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
-    "test:watch": "jest --watch",
-    "npm:update": "npm update"
+    "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@dhruv-m-patel/express-app": "^1.0.0"
+    "@dhruv-m-patel/express-app": "1.0.0"
   },
   "devDependencies": {
     "@apidevtools/swagger-cli": "^4.0.4",
