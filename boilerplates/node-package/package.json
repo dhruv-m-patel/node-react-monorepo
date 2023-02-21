@@ -7,8 +7,7 @@
     "build": "rimraf ./build && tsc",
     "test": "jest --silent",
     "test:ci": "jest --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
-    "test:watch": "jest --watch",
-    "npm:update": "npm update"
+    "test:watch": "jest --watch"
   },
   "devDependencies": {
     "jest": "27.0.5",

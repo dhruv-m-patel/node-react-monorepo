@@ -1,4 +1,6 @@
 {
-  "packages": ["packages/*", "services/node-service", "apps/react-app"],
-  "version": "1.0.0"
+  "version": "independent",
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "useWorkspaces": true,
+  "npmClient": "yarn"
 }
