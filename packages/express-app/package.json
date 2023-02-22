@@ -1,8 +1,9 @@
 {
   "name": "@dhruv-m-patel/express-app",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "An express server to run web or api applications",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest --runInBand",
@@ -10,7 +11,7 @@
     "test:watch": "jest --watch"
   },
   "author": "Dhruv Patel <dhruv.codelab@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
