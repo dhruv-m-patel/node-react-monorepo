@@ -4,6 +4,7 @@
   "description": "A starter app for frontend projects with universal react, material-ui and redux support",
   "main": "build/server/index.js",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "tsc && webpack",
     "clean": "rimraf build ",

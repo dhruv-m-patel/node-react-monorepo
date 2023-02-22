@@ -2,6 +2,8 @@
   "name": "@dhruv-m-patel/web-app",
   "version": "1.4.0",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "license": "MIT",
   "scripts": {
     "build": "rimraf ./build && tsc",
     "test": "jest --runInBand --passWithNoTests",

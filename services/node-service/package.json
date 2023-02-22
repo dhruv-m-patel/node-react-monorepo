@@ -3,6 +3,7 @@
   "version": "0.2.0",
   "main": "build/index.js",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "bundle:api": "swagger-cli bundle -t yaml -o build/api/api-spec.yaml src/api/api-spec.yaml",
     "build": "rimraf ./build && tsc && yarn run bundle:api",
