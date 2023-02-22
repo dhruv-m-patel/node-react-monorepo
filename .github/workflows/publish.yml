@@ -20,6 +20,7 @@ jobs:
           yarn config set npmScopes.dhruv-m-patel.npmRegistryServer "https://registry.npmjs.org"
           yarn config set npmScopes.dhruv-m-patel.npmAlwaysAuth true
           yarn config set npmScopes.dhruv-m-patel.npmAuthToken $NPM_TOKEN
+          npm config set '//registry.npmjs.org/:_authToken' "$NPM_TOKEN"
           yarn install --frozen-lockfile
           yarn run bootstrap
         env:
@@ -30,6 +31,8 @@ jobs:
         run: yarn run build
 
       - name: Publish Packages
-        run: npx lerna publish from-package --yes
+        run: |
+          npm config set '//registry.npmjs.org/:_authToken' "$NPM_TOKEN"
+          npx lerna publish from-package --yes
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
