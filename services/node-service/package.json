@@ -1,6 +1,6 @@
 {
   "name": "node-service",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "build/index.js",
   "private": true,
   "scripts": {
@@ -14,7 +14,7 @@
     "test:watch": "jest --watch"
   },
   "dependencies": {
-    "@dhruv-m-patel/express-app": "^1.1.0"
+    "@dhruv-m-patel/express-app": "^1.2.0"
   },
   "devDependencies": {
     "@apidevtools/swagger-cli": "^4.0.4",

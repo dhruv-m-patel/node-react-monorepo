@@ -1,6 +1,6 @@
 {
   "name": "@dhruv-m-patel/react-components",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A library of react components for frontend projects",
   "keywords": [
     "react",
@@ -9,7 +9,6 @@
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
   "types": "build/esm/index.d.ts",
-  "private": true,
   "scripts": {
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir build/cjs",
