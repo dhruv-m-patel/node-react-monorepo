@@ -5,19 +5,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
       - name: Install packages
         run: |
-          yarn install
+          yarn config set npmScopes.dhruv-m-patel.npmRegistryServer "https://registry.npmjs.org"
+          yarn config set npmScopes.dhruv-m-patel.npmAlwaysAuth true
+          yarn config set npmScopes.dhruv-m-patel.npmAuthToken $NPM_TOKEN
+          yarn install --frozen-lockfile
           yarn run bootstrap
+
       - name: Verify code formatting
         run: yarn run prettier:verify
+
       - name: Lint Code
         run: yarn run lint
+
       - name: Build app
         run: yarn run build
+
       - name: Run tests
         run: yarn run test:ci

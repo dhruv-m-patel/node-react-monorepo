@@ -9,7 +9,6 @@
   "main": "build/cjs/index.js",
   "module": "build/esm/index.js",
   "types": "build/esm/index.d.ts",
-  "private": true,
   "scripts": {
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir build/cjs",

@@ -2,21 +2,34 @@ name: build
 on:
   push:
     branches: [master]
+  workflow_dispatch:
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version-file: '.nvmrc'
+
       - name: Install packages
         run: |
-          yarn install
+          yarn config set npmScopes.dhruv-m-patel.npmRegistryServer "https://registry.npmjs.org"
+          yarn config set npmScopes.dhruv-m-patel.npmAlwaysAuth true
+          yarn config set npmScopes.dhruv-m-patel.npmAuthToken $NPM_TOKEN
+          yarn install --frozen-lockfile
           yarn run bootstrap
+        env:
+          NPM_TOKEN: ${{secrets.npm_token}}
+          CI: true
+
       - name: Build app
         run: yarn run build
-      - name: Publish
-        run: yarn run publish
+
+      - name: Publish Packages
+        run: npx lerna publish from-package --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
