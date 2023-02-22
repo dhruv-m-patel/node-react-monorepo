@@ -23,7 +23,7 @@ jobs:
           yarn install --frozen-lockfile
           yarn run bootstrap
         env:
-          NPM_TOKEN: ${{secrets.npm_token}}
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
           CI: true
 
       - name: Build app
@@ -32,4 +32,4 @@ jobs:
       - name: Publish Packages
         run: npx lerna publish from-package --yes
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
