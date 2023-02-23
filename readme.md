@@ -10,9 +10,9 @@ A monorepo for node-react projects built using lerna, managed with yarn workspac
 git clone git@github.com:dhruv-m-patel/node-react-monorepo.git
 cd node-react-monorepo
 yarn install
-yarn run bootstrap
-yarn run build
-yarn run start
+yarn bootstrap
+yarn build
+yarn start
 ```
 
 Access the react app running on http://localhost:3000
@@ -21,28 +21,19 @@ Access the backend api running on http://localhost:5000/api/message
 
 ## Packages
 
-- **packages**: Packages reusable across services or frontend.
 - **apps**: Frontend apps with styled-component, redux and configuration hydration support.
+- **boilerplates**: Boilerplate samples of packages, frontend and backend apps to serve as starter packs to expedite development
+- **packages**: Packages reusable across services or frontend.
 - **services**: Backend services.
 
-### Adding new dependencies in a specific package
+## How monorepo is used to version and publish packages?
 
-- To add a new dependency into a single package: `npx lerna add packageName --scope=packageName`
+- This monorepo embodies [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) as the development process.
+  - `develop` branch is default branch. This is where all regular code development is merged. This branch is deemed unstable and is usually busy with frequent merging.
+  - `master` branch is primary branch. This is where stable releases are merged. If hotfixes are needed, branch off of master and merge it to master after ensuring stability and bring the changes down to develop.
+  - `Other` branches such as feature or regular branches are branched off of `develop` and if it stays open for longer, to ensure it does not get stale, consider merging latest from develop or rebasing it off of latest changes in develop.
+  - `release` branches are usually branched off of develop at the point it is decided that a release is needed. After ensuring branch is stable, versioning is done and then code is merged to master which will trigger publish of packages.
 
-  e.g. `npx lerna add dotenv --scope=node-service`
+- Once release branch is created, as mentioned above in last point, once you are at the point changes seem stable, versioning is done. This is done locally by running `yarn run version`. After this, push your changes up to remote using `git push --follow-tags`
 
-- To add a new dependency into multiple packages: `npx lerna add packageName --scope={packageName1, packageName2}`
-
-  e.g. `npx lerna add dotenv --scope={node-service,react-app}`
-
-- To remove a dependency, edit package.json removing the line for the dependency and then run `yarn run bootstrap`
-
-- To add a devDependency, you would have to use `npx lerna add` to add a new dependency first and then move it to devDependencies for the package and then run `yarn run bootstrap`
-
-
-## Monorepo commands
-
-- `yarn run clean`: Cleans node_modules from all packages
-- `yarn run bootstrap`: This will install dependencies from all packages hoisting and symlinking node packages as required
-- `yarn run build`: Runs build in all packages
-- `yarn run test`: Runs tests in all packages
+- Merge changes to master, this will trigger running `yarn ci:publish` in Github Actions workflow and packages should automatically be published.
