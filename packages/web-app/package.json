@@ -47,5 +47,8 @@
     "webpack": "^4.44.2",
     "webpack-manifest-plugin": "^3.0.0",
     "webpack-node-externals": "^2.5.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
