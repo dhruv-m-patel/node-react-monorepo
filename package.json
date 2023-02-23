@@ -1,4 +1,6 @@
 {
+  "name": "node-react-monorepo",
+  "private": true,
   "engines": {
     "node": ">= 14.17.0"
   },
