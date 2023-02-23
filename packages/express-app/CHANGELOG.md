@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/dhruv-m-patel/node-react-monorepo/compare/@dhruv-m-patel/express-app@1.2.2...@dhruv-m-patel/express-app@1.2.3) (2023-02-23)
+
+**Note:** Version bump only for package @dhruv-m-patel/express-app
+
 ## [1.2.2](https://github.com/dhruv-m-patel/node-react-monorepo/compare/@dhruv-m-patel/express-app@1.2.1...@dhruv-m-patel/express-app@1.2.2) (2023-02-23)
 
 **Note:** Version bump only for package @dhruv-m-patel/express-app
