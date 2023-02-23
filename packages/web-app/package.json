@@ -1,6 +1,6 @@
 {
   "name": "@dhruv-m-patel/web-app",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "license": "MIT",
@@ -47,5 +47,8 @@
     "webpack": "^4.44.2",
     "webpack-manifest-plugin": "^3.0.0",
     "webpack-node-externals": "^2.5.2"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
