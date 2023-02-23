@@ -1,6 +1,6 @@
 {
   "name": "@dhruv-m-patel/react-hooks",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A library of custom react hooks for frontend projects",
   "keywords": [
     "react",
@@ -39,5 +39,8 @@
   },
   "peerDependencies": {
     "react": "^16.14.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
