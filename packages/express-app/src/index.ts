@@ -18,7 +18,7 @@ import process from 'process';
 import jsyaml from 'js-yaml';
 import yamljs from 'yamljs';
 
-export interface AppOptions {
+export interface AppConfigOptions {
   appName?: string;
   apiOptions?: {
     apiSpec: string;
@@ -52,7 +52,7 @@ function finalErrorHandler(
     try {
       next();
     } catch (error) {
-      console.error(error.message, error.stack);
+      console.error((error as Error).message, (error as Error).stack);
     }
   }
 }
@@ -61,7 +61,7 @@ process.on('exit', (code) => {
   console.log(`Process ${process.pid} is exiting with exit code ${code}`);
 });
 
-export function configureApp(options: AppOptions): express.Application {
+export function configureApp(options: AppConfigOptions): express.Application {
   const app: express.Application = express();
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
@@ -106,7 +106,9 @@ export function configureApp(options: AppOptions): express.Application {
 
   // Add traceability to all requests assigning them a unique identifier
   app.use((req: Request, res: Response, next: NextFunction) => {
-    req.id = uuid.v4();
+    if (!req.id) {
+      req.id = uuid.v4();
+    }
     next();
   });
 
@@ -124,31 +126,53 @@ export function configureApp(options: AppOptions): express.Application {
   return app;
 }
 
-export function runApp(
-  app: express.Application,
-  port = 5000,
-  useClusteredStart = false
-): void {
-  if (useClusteredStart) {
-    if (cluster.isMaster) {
-      console.log(`Main server process id: ${process.pid}`);
-      const cpus = os.cpus();
-      console.log(
-        `Forking ${cpus.length} child server processes on CPU Model ${cpus[0].model}`
-      );
-      for (let i = 0; i < cpus.length; i++) {
-        cluster.fork();
+export interface AppRunOptions {
+  useClusteredStart?: false;
+  port?: 5000;
+  appName?: 'express-app';
+  setup?: () => Promise<void>;
+  callback?: () => void;
+}
+
+export function runApp(app: express.Application, options: AppRunOptions): void {
+  const { appName, port, useClusteredStart, setup, callback } = options;
+
+  const startApp = () => {
+    if (useClusteredStart) {
+      if (cluster.isMaster) {
+        console.log(`Main server process id: ${process.pid}`);
+        const cpus = os.cpus();
+        console.log(
+          `Forking ${cpus.length} child server processes on CPU Model ${cpus[0].model}`
+        );
+        for (let i = 0; i < cpus.length; i++) {
+          cluster.fork();
+        }
+      } else {
+        app.listen(port, () => {
+          console.log(
+            `Server child process id ${process.pid} running, listening on port ${port}`
+          );
+          if (callback && typeof callback === 'function') {
+            callback();
+          }
+        });
       }
     } else {
       app.listen(port, () => {
-        console.log(
-          `Server child process id ${process.pid} running, listening on port ${port}`
-        );
+        console.log(`${appName} started on port ${port}...`);
+        if (callback && typeof callback === 'function') {
+          callback();
+        }
       });
     }
-  } else {
-    app.listen(port, () => {
-      console.log(`Server listening on port ${port}`);
+  };
+
+  if (setup && typeof setup === 'function') {
+    setup().then(() => {
+      startApp();
     });
+  } else {
+    startApp();
   }
 }
