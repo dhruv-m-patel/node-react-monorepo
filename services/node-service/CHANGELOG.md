@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.6](https://github.com/dhruv-m-patel/node-react-monorepo/compare/node-service@0.2.5...node-service@0.2.6) (2023-02-24)
+
+### Bug Fixes
+
+- Update AppRunOptions defaults ([32d96a1](https://github.com/dhruv-m-patel/node-react-monorepo/commit/32d96a1223eb1bca96cac2a6a6832893fd688b41))
+
 ## [0.2.5](https://github.com/dhruv-m-patel/node-react-monorepo/compare/node-service@0.2.4...node-service@0.2.5) (2023-02-23)
 
 **Note:** Version bump only for package node-service

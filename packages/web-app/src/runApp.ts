@@ -9,9 +9,13 @@ export interface AppStartupOptions {
 
 export default function runApp(
   app: express.Application,
-  options: AppStartupOptions
+  options: AppStartupOptions = {
+    port: 5000,
+    setup: undefined,
+    callback: undefined,
+  }
 ) {
-  const { port, appName, setup = undefined, callback = undefined } = options;
+  const { port, appName, setup, callback } = options;
 
   const startApp = () => {
     app.listen(port, () => {

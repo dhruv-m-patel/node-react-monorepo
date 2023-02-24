@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.6](https://github.com/dhruv-m-patel/node-react-monorepo/compare/@dhruv-m-patel/web-app@1.4.5...@dhruv-m-patel/web-app@1.4.6) (2023-02-24)
+
+**Note:** Version bump only for package @dhruv-m-patel/web-app
+
 ## [1.4.5](https://github.com/dhruv-m-patel/node-react-monorepo/compare/@dhruv-m-patel/web-app@1.4.4...@dhruv-m-patel/web-app@1.4.5) (2023-02-23)
 
 **Note:** Version bump only for package @dhruv-m-patel/web-app
