@@ -8,7 +8,10 @@ describe('configureApp', () => {
     const app = getTestApp({
       appName: 'test-app',
       apiOptions: {
-        apiSpec: path.resolve(__dirname, '../fixtures/test-app/api/open-api-spec.yaml'),
+        apiSpec: path.resolve(
+          __dirname,
+          '../fixtures/test-app/api/open-api-spec.yaml'
+        ),
         specType: 'openapi',
         validateResponses: true,
       },
@@ -30,7 +33,10 @@ describe('configureApp', () => {
     const app = getTestApp({
       appName: 'test-app',
       apiOptions: {
-        apiSpec: path.resolve(__dirname, '../fixtures/test-app/api/swagger-api-spec.yaml'),
+        apiSpec: path.resolve(
+          __dirname,
+          '../fixtures/test-app/api/swagger-api-spec.yaml'
+        ),
         specType: 'swagger',
         validateResponses: true,
       },
