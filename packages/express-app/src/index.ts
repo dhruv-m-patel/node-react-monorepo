@@ -127,14 +127,21 @@ export function configureApp(options: AppConfigOptions): express.Application {
 }
 
 export interface AppRunOptions {
-  useClusteredStart?: false;
-  port?: 5000;
-  appName?: 'express-app';
+  useClusteredStart?: boolean;
+  port?: number;
+  appName?: string;
   setup?: () => Promise<void>;
   callback?: () => void;
 }
 
-export function runApp(app: express.Application, options: AppRunOptions): void {
+export function runApp(
+  app: express.Application,
+  options: AppRunOptions = {
+    useClusteredStart: false,
+    port: 5000,
+    appName: 'express-app',
+  }
+): void {
   const { appName, port, useClusteredStart, setup, callback } = options;
 
   const startApp = () => {
