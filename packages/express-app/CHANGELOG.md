@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.6](https://github.com/dhruv-m-patel/node-react-monorepo/compare/@dhruv-m-patel/express-app@1.2.5...@dhruv-m-patel/express-app@1.2.6) (2023-02-24)
+
+### Bug Fixes
+
+- Fix code formatting ([2226301](https://github.com/dhruv-m-patel/node-react-monorepo/commit/2226301db6b0df4323518f47bd5e60ca02663d2a))
+- Update AppRunOptions defaults ([32d96a1](https://github.com/dhruv-m-patel/node-react-monorepo/commit/32d96a1223eb1bca96cac2a6a6832893fd688b41))
+
 ## [1.2.5](https://github.com/dhruv-m-patel/node-react-monorepo/compare/@dhruv-m-patel/express-app@1.2.4...@dhruv-m-patel/express-app@1.2.5) (2023-02-23)
 
 **Note:** Version bump only for package @dhruv-m-patel/express-app
