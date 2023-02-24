@@ -2,7 +2,7 @@
 
 A package to spin up a REST api server with express including swagger docs and health checks by default
 
-![CI Status](https://github.com/dhruv-m-patel/rest-api/workflows/build/badge.svg)
+![CI Status](https://github.com/dhruv-m-patel/node-react-monorepo/workflows/build/badge.svg)
 
 Built with express and typescript providing following features:
 
@@ -18,32 +18,32 @@ Built with express and typescript providing following features:
 
 2. Update your `app.ts` file (main application file) to export configuration as below:
 
-```typescript
-import path from 'path';
-import { Application } from 'express';
-import { configureApp } from '@dhruv-m-patel/express-app';
+    ```typescript
+    import path from 'path';
+    import { Application } from 'express';
+    import { configureApp } from '@dhruv-m-patel/express-app';
 
-const app: Application = configureApp({
-  appName: 'My RESTful API',
-  setup: (expressApp) => {
-    // ...
-    // Your app setup code goes here
-    // ...
-  },
-});
+    const app: Application = configureApp({
+      appName: 'My RESTful API',
+      setup: (expressApp) => {
+        // ...
+        // Your app setup code goes here
+        // ...
+      },
+    });
 
-export default app;
-```
+    export default app;
+    ```
 
 3. Update your `server.ts` or `index.ts` file (the file that starts the server) to run your application like this:
 
-```typescript
-import app from './app';
-import { runApp } from '@dhruv-m-patel/express-app';
+    ```typescript
+    import app from './app';
+    import { runApp } from '@dhruv-m-patel/express-app';
 
-const port: number = Number(process.env.PORT) || 5000;
+    const port: number = Number(process.env.PORT) || 5000;
 
-runApp(app, { port });
-```
+    runApp(app, { port });
+    ```
 
 For test application examples, please refer to `tests/integration/runTestApp.test.ts`.
