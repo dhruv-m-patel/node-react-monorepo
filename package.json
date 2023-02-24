@@ -50,7 +50,7 @@
     "start:prod": "lerna run start --stream -- -- dotenv_config_path=../../.env",
     "start-dev": "lerna run start-dev --stream -- -- dotenv_config_path=../../.env",
     "test": "lerna run test --stream",
-    "lint": "eslint . && yarn run lint:spec",
+    "lint": "eslint . && yarn run lint:spec && yarn prettier:verify",
     "lint:spec": "glob '**/src/**/api-spec.yaml' | xargs -n1 npx swagger-cli validate",
     "lint:fix": "lerna run lint:fix --stream",
     "pretest": "jest --clearCache",
