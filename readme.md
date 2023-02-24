@@ -1,14 +1,14 @@
-# node-react-monorepo
+# @dhruv-m-patel/packages
 
-A monorepo for node-react projects built using lerna, managed with yarn workspaces
+A monorepo for node-react packages built using lerna, managed with yarn workspaces
 
-![CI Status](https://github.com/dhruv-m-patel/node-react-monorepo/workflows/build/badge.svg)
+![CI Status](https://github.com/dhruv-m-patel/packages/workflows/build/badge.svg)
 
 ## Setup
 
 ```
-git clone git@github.com:dhruv-m-patel/node-react-monorepo.git
-cd node-react-monorepo
+git clone git@github.com:dhruv-m-patel/packages.git
+cd packages
 yarn install
 yarn bootstrap
 yarn build
@@ -21,10 +21,8 @@ Access the backend api running on http://localhost:5000/api/message
 
 ## Packages
 
-- **apps**: Frontend apps with styled-component, redux and configuration hydration support.
-- **boilerplates**: Boilerplate samples of packages, frontend and backend apps to serve as starter packs to expedite development
-- **packages**: Packages reusable across services or frontend.
-- **services**: Backend services.
+- **boilerplates**: Boilerplate samples of node-only and node-react packages
+- **packages**: Reusable, scoped, public packages published to npm
 
 ## How monorepo is used to version and publish packages?
 

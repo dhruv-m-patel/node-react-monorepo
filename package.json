@@ -1,13 +1,11 @@
 {
-  "name": "node-react-monorepo",
+  "name": "@dhruv-m-patel/packages",
   "private": true,
   "engines": {
     "node": ">= 14.17.0"
   },
   "workspaces": [
-    "packages/*",
-    "services/*",
-    "apps/*"
+    "packages/*"
   ],
   "devDependencies": {
     "@apidevtools/swagger-cli": "^4.0.4",
@@ -39,26 +37,20 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream",
-    "bundle:api": "lerna run bundle:api",
     "ci:build": "lerna run build --stream",
     "ci:test": "lerna run test:ci --stream",
-    "ci:lint": "eslint . && yarn run lint:spec",
+    "ci:lint": "eslint . && yarn prettier:verify",
     "ci:publish": "lerna publish from-package --yes",
     "clean": "lerna clean -y",
     "diff": "lerna diff",
-    "start": "lerna run start --stream",
-    "start:prod": "lerna run start --stream -- -- dotenv_config_path=../../.env",
-    "start-dev": "lerna run start-dev --stream -- -- dotenv_config_path=../../.env",
     "test": "lerna run test --stream",
-    "lint": "eslint . && yarn run lint:spec && yarn prettier:verify",
-    "lint:spec": "glob '**/src/**/api-spec.yaml' | xargs -n1 npx swagger-cli validate",
+    "lint": "eslint . && yarn prettier:verify",
     "lint:fix": "lerna run lint:fix --stream",
     "pretest": "jest --clearCache",
     "prettier:format": "prettier --write .",
     "prettier:verify": "prettier --check .",
     "storybook": "lerna run storybook --stream",
     "build-storybook": "lerna run build-storybook --stream",
-    "syncpack:fix": "syncpack fix-mismatches",
     "version": "lerna version --yes"
   }
 }
