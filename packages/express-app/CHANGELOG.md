@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.7](https://github.com/dhruv-m-patel/packages/compare/@dhruv-m-patel/express-app@1.2.6...@dhruv-m-patel/express-app@1.2.7) (2023-03-17)
+
+### Bug Fixes
+
+- Cleanup and fix dependencies for express-app ([d92311e](https://github.com/dhruv-m-patel/packages/commit/d92311e816bf7f33699fb888602646e2e54b26a4))
+
 ## [1.2.6](https://github.com/dhruv-m-patel/node-react-monorepo/compare/@dhruv-m-patel/express-app@1.2.5...@dhruv-m-patel/express-app@1.2.6) (2023-02-24)
 
 ### Bug Fixes
