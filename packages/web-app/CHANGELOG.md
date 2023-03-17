@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.7](https://github.com/dhruv-m-patel/packages/compare/@dhruv-m-patel/web-app@1.4.6...@dhruv-m-patel/web-app@1.4.7) (2023-03-17)
+
+### Bug Fixes
+
+- Cleanup and fix dependencies for web-app ([07e4991](https://github.com/dhruv-m-patel/packages/commit/07e4991403d018a580fb3db43375a9066f9e6199))
+
 ## [1.4.6](https://github.com/dhruv-m-patel/node-react-monorepo/compare/@dhruv-m-patel/web-app@1.4.5...@dhruv-m-patel/web-app@1.4.6) (2023-02-24)
 
 **Note:** Version bump only for package @dhruv-m-patel/web-app
