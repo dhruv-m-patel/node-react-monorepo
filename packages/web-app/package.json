@@ -11,6 +11,7 @@
     "test:changed": "jest --silent --passWithNoTests --runInBand --onlyChanged"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
     "@loadable/webpack-plugin": "^5.14.0",
     "@types/compression": "^1.7.0",
     "@types/cookie-parser": "^1.4.2",
@@ -21,6 +22,7 @@
     "@types/morgan": "^1.9.2",
     "@types/supertest": "^2.0.11",
     "@types/uuid": "^8.3.0",
+    "babel-loader": "^8.3.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
@@ -44,7 +46,7 @@
     "webpack-dev-middleware": "^3.7.3",
     "webpack-hot-middleware": "^2.25.0",
     "webpack-manifest-plugin": "^3.0.0",
-    "webpack-node-externals": "^2.5.2"
+    "webpack-node-externals": "^3.0.0"
   },
   "peerDependencies": {
     "express": "^4",
