@@ -96,20 +96,22 @@ export default function configureApp(options: AppOptions) {
 
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const config = require(webpackConfig);
+  const wpconfig = typeof config === 'function' ? config() : config;
+
   if (process.env.NODE_ENV === 'development') {
-    const compiler =
-      typeof config === 'function' ? webpack(config()) : webpack(config);
+    const compiler = webpack(wpconfig);
+
     app.use(
       webpackDevMiddleware(compiler, {
         stats: { colors: true },
-        publicPath: config.output.publicPath,
+        publicPath: wpconfig.output.publicPath,
       })
     );
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     app.use(webpackHotMiddleware(compiler));
   } else {
     // If running in non-development mode, expose the public path as static
-    app.use(express.static(config.output.path));
+    app.use(express.static(wpconfig.output.path));
   }
 
   // Support directory-based routing by default
