@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.8](https://github.com/dhruv-m-patel/packages/compare/@dhruv-m-patel/web-app@1.4.7...@dhruv-m-patel/web-app@1.4.8) (2023-11-13)
+
+### Bug Fixes
+
+- Fix SSR error hydrating webpack config ([004ee0f](https://github.com/dhruv-m-patel/packages/commit/004ee0f93e6d5b1efdfeee5dd2725356fdbe76a5))
+
 ## [1.4.7](https://github.com/dhruv-m-patel/packages/compare/@dhruv-m-patel/web-app@1.4.6...@dhruv-m-patel/web-app@1.4.7) (2023-03-17)
 
 ### Bug Fixes
