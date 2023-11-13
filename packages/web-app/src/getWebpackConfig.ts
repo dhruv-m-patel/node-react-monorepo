@@ -3,6 +3,7 @@ import webpack from 'webpack';
 import TerserPlugin from 'terser-webpack-plugin';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import LoadablePlugin from '@loadable/webpack-plugin';
+import nodeExternals from 'webpack-node-externals';
 
 export type Environment = 'development' | 'staging' | 'production';
 
@@ -30,6 +31,18 @@ export default function getWebpackConfig(
     },
     module: {
       rules: [
+        {
+          test: /\.jsx$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-react'],
+              },
+            },
+          ],
+        },
         {
           test: /\.tsx?$/,
           exclude: /node_modules/,
@@ -94,5 +107,6 @@ export default function getWebpackConfig(
       maxAssetSize: 500000, // in bytes
       hints: false,
     },
+    externals: nodeExternals(),
   };
 }

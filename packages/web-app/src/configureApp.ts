@@ -97,7 +97,7 @@ export default function configureApp(options: AppOptions) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const config = require(webpackConfig);
   if (process.env.NODE_ENV === 'development') {
-    const compiler = webpack(config);
+    const compiler = typeof config === 'function' ? webpack(config()) : webpack(config);
     app.use(
       webpackDevMiddleware(compiler, {
         stats: { colors: true },
