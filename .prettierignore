@@ -6,3 +6,5 @@ coverage
 .env.example
 package-lock.json
 readme.md
+.yarn
+.yarn*
