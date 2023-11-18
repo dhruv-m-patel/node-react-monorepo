@@ -9,8 +9,8 @@ A monorepo for node-react packages built using lerna, managed with yarn workspac
 ```
 git clone git@github.com:dhruv-m-patel/packages.git
 cd packages
+npx corepack enable
 yarn install
-yarn bootstrap
 yarn build
 ```
 

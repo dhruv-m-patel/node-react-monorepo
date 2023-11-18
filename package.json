@@ -2,7 +2,8 @@
   "name": "@dhruv-m-patel/packages",
   "private": true,
   "engines": {
-    "node": ">= 14.17.0"
+    "node": ">= 18",
+    "yarn": ">= 3"
   },
   "workspaces": [
     "packages/*"
@@ -35,7 +36,6 @@
     ]
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
     "build": "lerna run build --stream",
     "ci:build": "lerna run build --stream",
     "ci:test": "lerna run test:ci --stream",
@@ -52,5 +52,6 @@
     "storybook": "lerna run storybook --stream",
     "build-storybook": "lerna run build-storybook --stream",
     "version": "lerna version --yes"
-  }
+  },
+  "packageManager": "yarn@3.2.3"
 }
