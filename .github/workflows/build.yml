@@ -22,7 +22,7 @@ jobs:
           yarn config set npmScopes.dhruv-m-patel.npmRegistryServer "https://registry.npmjs.org"
           yarn config set npmScopes.dhruv-m-patel.npmAlwaysAuth true
           yarn config set npmScopes.dhruv-m-patel.npmAuthToken $NPM_TOKEN
-          yarn install --frozen-lockfile
+          yarn install --immutable
           yarn bootstrap
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
