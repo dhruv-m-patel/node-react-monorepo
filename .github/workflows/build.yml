@@ -23,7 +23,6 @@ jobs:
           yarn config set npmScopes.dhruv-m-patel.npmAlwaysAuth true
           yarn config set npmScopes.dhruv-m-patel.npmAuthToken $NPM_TOKEN
           yarn install --immutable
-          yarn bootstrap
         env:
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
           CI: true
