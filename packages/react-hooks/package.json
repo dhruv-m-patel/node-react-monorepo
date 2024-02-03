@@ -23,12 +23,12 @@
     "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary"
   },
   "devDependencies": {
+    "@dhruv-m-patel/eslint-config-react": "workspace:^",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^11.2.2",
     "@types/jest": "^26.0.23",
     "@types/node": "^18.14.0",
     "@types/react": "^17.0.0",
-    "eslint-plugin-react": "7.24.0",
     "fast-deep-equal": "^3.1.3",
     "jest": "27.0.5",
     "jest-junit": "^12.2.0",
