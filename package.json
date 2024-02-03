@@ -1,6 +1,5 @@
 {
   "name": "@dhruv-m-patel/packages",
-  "private": true,
   "engines": {
     "node": ">= 18",
     "yarn": ">= 3"
@@ -23,7 +22,6 @@
     "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-standard": "^5.0.0",
     "husky": "^8.0.3",
-    "lerna": "^6.5.1",
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.4",
     "syncpack": "^9.7.4",
