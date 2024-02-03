@@ -7,7 +7,7 @@
     "jsx": "react",
     "moduleResolution": "Node",
     "typeRoots": ["node_modules/@types", "./typings/"],
-    "types": ["node", "jest", "@types/jest"],
+    "types": ["node", "jest", "../../node_modules/@types/jest"],
     "outDir": "build/esm",
     "rootDir": "./src",
     "declaration": true,
