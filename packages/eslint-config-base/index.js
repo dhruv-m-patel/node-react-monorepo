@@ -1,6 +1,4 @@
-import { ESLint } from "eslint";
-
-export default {
+module.exports = {
   root: true,
   extends: [
     'airbnb-base',
@@ -33,4 +31,4 @@ export default {
       props: false,
     }],
   },
-} as ESLint.ConfigData;
+};

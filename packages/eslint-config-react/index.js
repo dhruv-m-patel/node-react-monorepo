@@ -1,6 +1,4 @@
-import { ESLint } from "eslint";
-
-export default {
+module.exports = {
   extends: '@dhruv-m-patel/eslint-config-base',
   parserOptions: {
     ecmaFeatures: {
@@ -62,4 +60,4 @@ export default {
       },
     },
   ],
-} as ESLint.ConfigData;
+};

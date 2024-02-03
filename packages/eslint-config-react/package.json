@@ -1,18 +1,12 @@
 {
   "name": "@dhruv-m-patel/eslint-config-react",
   "version": "0.0.0",
-  "main": "build/index.js",
+  "main": "index.js",
   "description": "Basic code standards for react projects",
   "license": "MIT",
-  "scripts": {
-    "build": "tsc"
-  },
   "dependencies": {
     "@dhruv-m-patel/eslint-config-base": "workspace:^",
     "eslint-plugin-react-hooks": "^4.6.0"
-  },
-  "devDependencies": {
-    "typescript": "4.3.4"
   },
   "publishConfig": {
     "access": "public"

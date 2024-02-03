@@ -2,7 +2,7 @@
   "name": "@dhruv-m-patel/eslint-config-base",
   "version": "0.0.1",
   "description": "Basic code standards for javascript and typescript projects",
-  "main": "build/index.js",
+  "main": "index.js",
   "keywords": [
     "eslint",
     "lint",
@@ -11,9 +11,6 @@
   ],
   "author": "Dhruv Patel<https://github.com/dhruv-m-patel>",
   "license": "MIT",
-  "scripts": {
-    "build": "tsc"
-  },
   "dependencies": {
     "@babel/core": "^7.23.7",
     "@babel/eslint-parser": "^7.23.3",
@@ -27,9 +24,6 @@
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.8"
-  },
-  "devDependencies": {
-    "typescript": "4.3.4"
   },
   "publishConfig": {
     "access": "public"
