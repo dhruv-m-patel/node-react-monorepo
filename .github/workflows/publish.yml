@@ -31,4 +31,8 @@ jobs:
         run: yarn ci:build
 
       - name: Publish Packages
-        run: yarn ci:publish
+        uses: changesets/action@v1
+        with:
+          publish: yarn publish
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
