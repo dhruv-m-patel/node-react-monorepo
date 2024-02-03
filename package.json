@@ -9,6 +9,7 @@
   ],
   "devDependencies": {
     "@apidevtools/swagger-cli": "^4.0.4",
+    "@changesets/cli": "^2.27.1",
     "@types/node": "^18.14.0",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.53.0",
@@ -39,7 +40,7 @@
     "ci:build": "turbo run build --no-color --no-update-notifier",
     "ci:test": "turbo run ci:test --no-color",
     "ci:lint": "eslint . && yarn prettier:verify",
-    "ci:publish": "lerna publish from-package --yes",
+    "ci:publish": "yarn changeset publish",
     "test": "turbo run test",
     "lint": "eslint . && yarn prettier:verify",
     "lint:fix": "turbo run lint:fix",
@@ -47,7 +48,8 @@
     "prettier:format": "prettier --write .",
     "prettier:verify": "prettier --check .",
     "storybook": "turbo run storybook",
-    "build-storybook": "turbo run build-storybook"
+    "build-storybook": "turbo run build-storybook",
+    "version": "yarn changeset version"
   },
   "packageManager": "yarn@3.2.3"
 }
