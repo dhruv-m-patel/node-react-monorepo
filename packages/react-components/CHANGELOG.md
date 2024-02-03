@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.11
+
+### Patch Changes
+
+- 974891f: Fixed type resolution for tests
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
