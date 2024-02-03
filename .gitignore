@@ -13,5 +13,7 @@ coverage/
 !.yarn/sdks
 !.yarn/versions
 
+.turbo
+
 *.tsbuildinfo
 .eslintcache

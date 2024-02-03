@@ -6,9 +6,9 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf ./build && tsc",
+    "lint:ts": "eslint src/**/*.ts",
     "test": "jest --runInBand --passWithNoTests",
-    "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
-    "test:changed": "jest --silent --passWithNoTests --runInBand --onlyChanged"
+    "ci:test": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

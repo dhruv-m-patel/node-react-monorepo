@@ -25,6 +25,7 @@
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.4",
     "syncpack": "^9.7.4",
+    "turbo": "^1.12.2",
     "typescript": "4.3.4"
   },
   "lint-staged": {
@@ -34,22 +35,19 @@
     ]
   },
   "scripts": {
-    "build": "lerna run build --stream",
-    "ci:build": "lerna run build --stream",
-    "ci:test": "lerna run test:ci --stream",
+    "build": "turbo run build --color",
+    "ci:build": "turbo run build --no-color --no-update-notifier",
+    "ci:test": "turbo run ci:test --no-color",
     "ci:lint": "eslint . && yarn prettier:verify",
     "ci:publish": "lerna publish from-package --yes",
-    "clean": "lerna clean -y",
-    "diff": "lerna diff",
-    "test": "lerna run test --stream",
+    "test": "turbo run test",
     "lint": "eslint . && yarn prettier:verify",
-    "lint:fix": "lerna run lint:fix --stream",
+    "lint:fix": "turbo run lint:fix",
     "pretest": "jest --clearCache",
     "prettier:format": "prettier --write .",
     "prettier:verify": "prettier --check .",
-    "storybook": "lerna run storybook --stream",
-    "build-storybook": "lerna run build-storybook --stream",
-    "version": "lerna version --yes"
+    "storybook": "turbo run storybook",
+    "build-storybook": "turbo run build-storybook"
   },
   "packageManager": "yarn@3.2.3"
 }

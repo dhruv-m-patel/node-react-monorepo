@@ -6,9 +6,9 @@
   "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "lint": "eslint src/**/*.ts",
     "test": "jest --runInBand",
-    "test:ci": "jest --silent --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
-    "test:watch": "jest --watch"
+    "ci:test": "jest --silent --ci --coverage --coverageReporters=text --coverageReporters=text-summary"
   },
   "author": {
     "name": "Dhruv Patel",

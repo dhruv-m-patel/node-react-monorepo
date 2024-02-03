@@ -21,8 +21,7 @@
     "lint:fix": "eslint --fix .",
     "prettier:verify": "prettier --check .",
     "test": "jest --runInBand",
-    "test:ci": "jest --silent --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
-    "test:changed": "jest --runInBand --onlyChanged",
+    "ci:test": "jest --silent --ci --coverage --coverageReporters=text --coverageReporters=text-summary",
     "storybook": "start-storybook -p 6789",
     "build-storybook": "build-storybook"
   },
