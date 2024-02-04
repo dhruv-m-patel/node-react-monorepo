@@ -11,7 +11,7 @@
       "node",
       "jest",
       "../../node_modules/@types/jest",
-      "../../node_modules/@testing-library/jest-dom",
+      "../../node_modules/@testing-library/jest-dom"
     ],
     "outDir": "build/esm",
     "rootDir": "./src",
