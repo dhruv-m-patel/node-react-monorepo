@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.12
+
+### Patch Changes
+
+- aa8a2e3: Use @dhruv-m-patel/eslint-config packages and fix formatting
+
 ## 1.2.11
 
 ### Patch Changes

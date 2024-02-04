@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.4.11
+
+### Patch Changes
+
+- aa8a2e3: Use @dhruv-m-patel/eslint-config packages and fix formatting
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
