@@ -23,7 +23,7 @@ function finalErrorHandler(
   err: ResponseError,
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ) {
   if (err) {
     if (!err.status) {
@@ -84,7 +84,7 @@ export default function configureApp(options: AppOptions) {
           httpOnly: true,
           maxAge: 60 * 60 * 10000, // Cookies will be valid for 1 hour
         },
-      }),
+      })
     );
   }
 
@@ -105,7 +105,7 @@ export default function configureApp(options: AppOptions) {
       webpackDevMiddleware(compiler, {
         stats: { colors: true },
         publicPath: wpconfig.output.publicPath,
-      }),
+      })
     );
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     app.use(webpackHotMiddleware(compiler));
@@ -118,7 +118,7 @@ export default function configureApp(options: AppOptions) {
   app.use(
     enrouten({
       directory: routes,
-    }),
+    })
   );
 
   // Allow consumer to run its own setup adding additional things for server app

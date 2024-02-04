@@ -41,7 +41,7 @@ function finalErrorHandler(
   err: ResponseError,
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ) {
   if (err) {
     console.error(err.message, err.stack);
@@ -80,7 +80,7 @@ export function configureApp(options: AppConfigOptions): express.Application {
     app.use(
       '/api/docs',
       swaggerUi.serve,
-      swaggerUi.setup(yamljs.load(apiSpec)),
+      swaggerUi.setup(yamljs.load(apiSpec))
     );
 
     // Enforce request-response validations
@@ -91,7 +91,7 @@ export function configureApp(options: AppConfigOptions): express.Application {
           validateRequest: true,
           validateResponse: validateResponses,
           allowNullable: true,
-        }),
+        })
       );
     } else {
       app.use(
@@ -99,7 +99,7 @@ export function configureApp(options: AppConfigOptions): express.Application {
           apiSpec: jsyaml.load(fs.readFileSync(apiSpec, 'utf8')) as string,
           validateRequests: true,
           validateResponses,
-        }),
+        })
       );
     }
   }
@@ -141,7 +141,7 @@ export function runApp(
     useClusteredStart: false,
     port: 5000,
     appName: 'express-app',
-  },
+  }
 ): void {
   const { appName, port, useClusteredStart, setup, callback } = options;
 
@@ -151,7 +151,7 @@ export function runApp(
         console.log(`Main server process id: ${process.pid}`);
         const cpus = os.cpus();
         console.log(
-          `Forking ${cpus.length} child server processes on CPU Model ${cpus[0].model}`,
+          `Forking ${cpus.length} child server processes on CPU Model ${cpus[0].model}`
         );
         for (let i = 0; i < cpus.length; i++) {
           cluster.fork();
@@ -159,7 +159,7 @@ export function runApp(
       } else {
         app.listen(port, () => {
           console.log(
-            `Server child process id ${process.pid} running, listening on port ${port}`,
+            `Server child process id ${process.pid} running, listening on port ${port}`
           );
           if (callback && typeof callback === 'function') {
             callback();

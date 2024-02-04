@@ -17,15 +17,22 @@ module.exports = {
   },
   rules: {
     'arrow-parens': 'off',
-    'max-len': ['error', {
-      code: 120,
-    }],
+    'max-len': [
+      'error',
+      {
+        code: 120,
+      },
+    ],
     'import/prefer-default-export': 'off',
     'object-curly-newline': 'off',
     'no-restricted-exports': 'off',
-    indent: ['error', 2, {
-      SwitchCase: 1,
-    }],
+    indent: [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+      },
+    ],
     'default-param-last': 'off',
   },
   overrides: [
@@ -47,8 +54,14 @@ module.exports = {
     },
     {
       files: [
-        '*.stories.js', '*.stories.jsx', '*.stories.ts', '*.stories.tsx',
-        '*.test.js', '*.test.jsx', '*.test.ts', '*.test.tsx',
+        '*.stories.js',
+        '*.stories.jsx',
+        '*.stories.ts',
+        '*.stories.tsx',
+        '*.test.js',
+        '*.test.jsx',
+        '*.test.ts',
+        '*.test.tsx',
       ],
       rules: {
         'max-len': 'off',

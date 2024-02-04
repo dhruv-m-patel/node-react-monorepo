@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme: Theme) =>
         width: '100%',
       },
     },
-  }),
+  })
 );
 
 export interface DrawerProps {
@@ -96,7 +96,7 @@ export default function Drawer({
             drawerOpen: drawerIsOpen,
             [`${className}-drawerContainer`]: !!className,
           },
-          'drawerContainer',
+          'drawerContainer'
         )}
       >
         {drawerContent}

@@ -1,15 +1,10 @@
 module.exports = {
   root: true,
-  extends: [
-    'airbnb-base',
-  ],
+  extends: ['airbnb-base'],
   overrides: [
     {
       files: ['**/*.ts', '**/*.tsx'],
-      extends: [
-        'airbnb-base',
-        'airbnb-typescript/base',
-      ],
+      extends: ['airbnb-base', 'airbnb-typescript/base'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
         project: './tsconfig.json',
@@ -17,13 +12,12 @@ module.exports = {
       plugins: ['@typescript-eslint'],
       rules: {
         '@typescript-eslint/indent': 'off',
+        '@typescript-eslint/comma-dangle': 'off',
       },
     },
     {
       files: ['**/*.js', '**/*.jsx'],
-      extends: [
-        'airbnb-base',
-      ],
+      extends: ['airbnb-base'],
       parser: '@babel/eslint-parser',
       parserOptions: {
         requireConfigFile: false,
@@ -36,9 +30,12 @@ module.exports = {
     'import/order': 'off',
     'import/no-extraneous-dependencies': 'off',
     'object-curly-newline': 'off',
-    'no-param-reassign': [2, {
-      props: false,
-    }],
+    'no-param-reassign': [
+      2,
+      {
+        props: false,
+      },
+    ],
     'no-plusplus': 'off',
     'implicit-arrow-linebreak': 'off',
     'no-confusing-arrow': 'off',

@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       color: StyleVariables.colors.black,
     },
-  }),
+  })
 );
 
 export interface AppBarProps {
