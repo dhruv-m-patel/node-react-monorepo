@@ -13,7 +13,7 @@ export default function runApp(
     port: 5000,
     setup: undefined,
     callback: undefined,
-  }
+  },
 ) {
   const { port, appName, setup, callback } = options;
 

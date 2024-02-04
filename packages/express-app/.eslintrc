@@ -3,5 +3,13 @@
   "env": {
     "node": true,
     "jest": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": "off",
+    "object-curly-newline": "off",
+    "no-plusplus": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-confusing-arrow": "off",
+    "function-paren-newline": "off"
   }
 }

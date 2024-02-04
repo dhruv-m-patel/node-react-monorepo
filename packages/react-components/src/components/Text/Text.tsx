@@ -85,7 +85,7 @@ export default function Text({
           [classes.italic]: italic || lowercasedTag === 'i',
           [classes.underline]: underline || lowercasedTag === 'u',
         },
-        className
+        className,
       )}
       {...rest}
     >

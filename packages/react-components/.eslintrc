@@ -4,5 +4,14 @@
     "node": true,
     "jest": true,
     "browser": true
+  },
+  "rules": {
+    "import/no-extraneous-dependencies": "off",
+    "no-plusplus": "off",
+    "import/order": "off",
+    "implicit-arrow-linebreak": "off",
+    "no-confusing-arrow": "off",
+    "function-paren-newline": "off",
+    "@typescript-eslint/no-implied-eval": "off"
   }
 }

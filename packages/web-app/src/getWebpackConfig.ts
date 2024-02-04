@@ -9,7 +9,7 @@ export type Environment = 'development' | 'staging' | 'production';
 
 export default function getWebpackConfig(
   environment: Environment,
-  basePath: string
+  basePath: string,
 ) {
   const isProduction = environment === 'production';
   const isDevelopment = environment === 'development';

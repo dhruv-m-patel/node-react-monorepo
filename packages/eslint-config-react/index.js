@@ -15,7 +15,7 @@ module.exports = {
       },
     },
   },
-  'rules': {
+  rules: {
     'arrow-parens': 'off',
     'max-len': ['error', {
       code: 120,
@@ -44,11 +44,6 @@ module.exports = {
         'src/addons/**',
         'webpack.config.js',
       ],
-      rules: {
-        'import/no-extraneous-dependencies': ['error', {
-          devDependencies: true,
-        }],
-      },
     },
     {
       files: [

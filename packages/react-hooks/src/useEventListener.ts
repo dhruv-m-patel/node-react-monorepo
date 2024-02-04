@@ -10,7 +10,7 @@ import { useRef, useEffect } from 'react';
 export default function useEventListener(
   domEvent: string,
   handler: () => void,
-  element = window
+  element = window,
 ) {
   const savedHandler = useRef<(e) => void>();
 

@@ -3,5 +3,12 @@
   "env": {
     "node": true,
     "jest": true
+  },
+  "rules": {
+    "object-curly-newline": "off",
+    "import/export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "consistent-return": "off",
+    "no-return-assign": "off"
   }
 }

@@ -4,5 +4,13 @@
     "node": true,
     "jest": true,
     "browser": true
+  },
+  "rules": {
+    "import/export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "consistent-return": "off",
+    "@typescript-eslint/no-shadow": "off",
+    "@typescript-eslint/no-implied-eval": "off",
+    "no-return-assign": "off"
   }
 }
