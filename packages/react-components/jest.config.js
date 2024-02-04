@@ -23,5 +23,8 @@ module.exports = {
   rootDir: './src',
   moduleDirectories: ['node_modules', 'src'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  setupFilesAfterEnv: ['<rootDir>/setupTests.ts'],
+  setupFilesAfterEnv: [
+    'jest-canvas-mock',
+    path.join(__dirname, 'src/setupTests.ts'),
+  ],
 };
