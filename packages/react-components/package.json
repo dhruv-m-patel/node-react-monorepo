@@ -27,6 +27,7 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@dhruv-m-patel/eslint-config-react": "workspace:^",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
     "@storybook/addon-a11y": "^6.1.11",
@@ -41,7 +42,6 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "clsx": "^1.1.1",
-    "eslint-plugin-react": "7.24.0",
     "jest": "27.0.5",
     "jest-junit": "^12.2.0",
     "react": "^16.14.0",

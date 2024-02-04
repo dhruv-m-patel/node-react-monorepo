@@ -98,7 +98,7 @@ export function configureApp(options: AppConfigOptions): express.Application {
         ExpressOpenApiValidator.middleware({
           apiSpec: jsyaml.load(fs.readFileSync(apiSpec, 'utf8')) as string,
           validateRequests: true,
-          validateResponses: validateResponses,
+          validateResponses,
         })
       );
     }
@@ -120,7 +120,8 @@ export function configureApp(options: AppConfigOptions): express.Application {
   // Allow consumer to run their route setup
   setup(app);
 
-  // Add final error handler by default as the last middleware to handle unhandled errors from express routes
+  // Add final error handler by default as the last middleware
+  // to handle unhandled errors from express routes
   app.use(finalErrorHandler);
 
   return app;

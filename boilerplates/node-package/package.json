@@ -12,6 +12,7 @@
     "test:watch": "jest --watch"
   },
   "devDependencies": {
+    "@dhruv-m-patel/eslint-config-base": "workspace:^",
     "jest": "27.0.5",
     "rimraf": "^3.0.2",
     "ts-jest": "^27.0.3",

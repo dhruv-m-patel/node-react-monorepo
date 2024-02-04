@@ -1,0 +1,14 @@
+{
+  "name": "@dhruv-m-patel/eslint-config-react",
+  "version": "0.0.0",
+  "main": "index.js",
+  "description": "Basic code standards for react projects",
+  "license": "MIT",
+  "dependencies": {
+    "@dhruv-m-patel/eslint-config-base": "workspace:^",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

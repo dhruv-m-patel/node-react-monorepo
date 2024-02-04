@@ -94,7 +94,7 @@ export default function configureApp(options: AppOptions) {
     });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  // eslint-disable-next-line global-require, import/no-dynamic-require
   const config = require(webpackConfig);
   const wpconfig = typeof config === 'function' ? config() : config;
 
