@@ -1,7 +1,5 @@
 module.exports = {
-  extends: [
-    '@dhruv-m-patel/eslint-config-base',
-  ],
+  extends: ['@dhruv-m-patel/eslint-config-base'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
