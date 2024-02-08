@@ -46,7 +46,7 @@
     "prettier:verify": "prettier --check .",
     "storybook": "lerna run storybook --stream",
     "build-storybook": "lerna run build-storybook --stream",
-    "version": "yarn changeset"
+    "version": "yarn changeset version"
   },
   "packageManager": "yarn@3.2.3"
 }
