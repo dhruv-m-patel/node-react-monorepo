@@ -24,6 +24,7 @@ module.exports = {
   moduleDirectories: ['node_modules', 'src'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   setupFilesAfterEnv: [
+    '@testing-library/jest-dom',
     'jest-canvas-mock',
     path.join(__dirname, 'src/setupTests.ts'),
   ],

@@ -4,6 +4,11 @@
   "description": "A package to spin up a REST api server with express including swagger docs and health checks by default",
   "main": "build/index.js",
   "types": "build/index.d.ts",
+  "engines": {
+    "node": ">= 18",
+    "npm": ">= 10",
+    "yarn": ">= 3"
+  },
   "scripts": {
     "build": "tsc",
     "test": "jest --runInBand",
@@ -45,7 +50,7 @@
     "yamljs": "^0.3.0"
   },
   "peerDependencies": {
-    "express": "^4"
+    "express": ">= 4"
   },
   "publishConfig": {
     "access": "public"

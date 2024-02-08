@@ -33,7 +33,9 @@ jobs:
       - name: Publish Packages
         uses: changesets/action@v1
         with:
-          publish: yarn publish
+          publish: |
+            yarn workspaces foreach --from '@dhruv-m-patel/*' npm publish --access public
+            yarn changeset tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

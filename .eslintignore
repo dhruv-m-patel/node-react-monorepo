@@ -17,3 +17,4 @@ lerna.json
 *.yaml
 **/*/config/
 **/*/webpack.config.js
+boilerplates/
