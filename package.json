@@ -35,7 +35,6 @@
     "ci:build": "lerna run build --stream",
     "ci:test": "lerna run test:ci --stream",
     "ci:lint": "eslint . && yarn prettier:verify",
-    "publish": "yarn changeset publish",
     "clean": "lerna clean -y",
     "diff": "lerna diff",
     "test": "lerna run test --stream",
@@ -46,7 +45,7 @@
     "prettier:verify": "prettier --check .",
     "storybook": "lerna run storybook --stream",
     "build-storybook": "lerna run build-storybook --stream",
-    "version": "yarn changeset version"
+    "version": "yarn changeset"
   },
   "packageManager": "yarn@3.2.3"
 }
