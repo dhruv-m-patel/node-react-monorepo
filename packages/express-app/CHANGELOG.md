@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.12
+
+### Patch Changes
+
+- 70410ea: Fix workspace range in published packages
+
 ## 1.2.13
 
 ### Patch Changes

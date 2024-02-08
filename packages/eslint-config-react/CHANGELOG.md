@@ -1,5 +1,13 @@
 # @dhruv-m-patel/eslint-config-react
 
+## 1.0.1
+
+### Patch Changes
+
+- 70410ea: Fix workspace range in published packages
+- Updated dependencies [70410ea]
+  - @dhruv-m-patel/eslint-config-base@1.0.1
+
 ## 1.0.2
 
 ### Patch Changes
