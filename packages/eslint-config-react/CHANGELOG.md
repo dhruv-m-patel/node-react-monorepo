@@ -1,5 +1,13 @@
 # @dhruv-m-patel/eslint-config-react
 
+## 1.0.2
+
+### Patch Changes
+
+- 8c5485d: Publish packages again
+- Updated dependencies [8c5485d]
+  - @dhruv-m-patel/eslint-config-base@1.0.2
+
 ## 1.0.1
 
 ### Patch Changes
