@@ -1,5 +1,7 @@
 module.exports = {
-  extends: '@dhruv-m-patel/eslint-config-base',
+  extends: [
+    '@dhruv-m-patel/eslint-config-base',
+  ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -36,22 +38,34 @@ module.exports = {
     'default-param-last': 'off',
   },
   overrides: [
+    // Overrides for typescript based react projects
     {
+      files: ['**/*.ts', '**/*.tsx'],
       extends: [
         '@dhruv-m-patel/eslint-config-base',
+        'plugin:react/recommended',
+        'plugin:storybook/recommended',
         'plugin:react-hooks/recommended',
       ],
-      plugins: ['react-hooks'],
-      files: [
-        'jest-setup.js',
-        '*.stories.js',
-        '*.stories.jsx',
-        '*.test.js',
-        '*.test.jsx',
-        'src/addons/**',
-        'webpack.config.js',
-      ],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        project: './tsconfig.json',
+      },
+      plugins: ['@typescript-eslint', 'react-hooks'],
     },
+    // Overrides for javascript based react projects
+    {
+      files: ['**/*.js', '**/*.jsx'],
+      extends: [
+        '@dhruv-m-patel/eslint-config-base',
+        'plugin:react/recommended',
+        'plugin:storybook/recommended',
+        'plugin:react-hooks/recommended',
+      ],
+      parser: '@babel/eslint-parser',
+      plugins: ['@babel', 'react-hooks'],
+    },
+    // Overrides for stories and tests
     {
       files: [
         '*.stories.js',
