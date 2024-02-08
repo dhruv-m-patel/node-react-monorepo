@@ -35,7 +35,6 @@
     "ci:build": "lerna run build --stream",
     "ci:test": "lerna run test:ci --stream",
     "ci:lint": "eslint . && yarn prettier:verify",
-    "publish": "yarn changeset publish",
     "clean": "lerna clean -y",
     "diff": "lerna diff",
     "test": "lerna run test --stream",

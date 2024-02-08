@@ -1,6 +1,6 @@
 {
   "name": "@dhruv-m-patel/eslint-config-base",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Basic code standards for javascript and typescript projects",
   "main": "index.js",
   "keywords": [
