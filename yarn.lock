@@ -2306,7 +2306,9 @@ __metadata:
   dependencies:
     "@dhruv-m-patel/eslint-config-base": "workspace:^"
     eslint: ^8.56.0
+    eslint-plugin-react: ^7.33.2
     eslint-plugin-react-hooks: ^4.6.0
+    eslint-plugin-storybook: ^0.6.15
   peerDependencies:
     eslint: ">= 8"
   languageName: unknown
@@ -2356,13 +2358,10 @@ __metadata:
     "@babel/eslint-plugin": ^7.23.5
     "@changesets/cli": ^2.27.1
     "@dhruv-m-patel/eslint-config-base": "workspace:^"
-    "@dhruv-m-patel/eslint-config-react": "workspace:^"
     "@types/node": ^18.14.0
     cli-glob: ^0.1.0
     dotenv: ^16.0.3
     eslint: ^8.56.0
-    eslint-plugin-react: ^7.33.2
-    eslint-plugin-storybook: ^0.6.15
     husky: ^8.0.3
     lerna: ^8.0.2
     lint-staged: ^13.3.0

@@ -48,10 +48,5 @@
     "build-storybook": "lerna run build-storybook --stream",
     "version": "yarn changeset"
   },
-  "packageManager": "yarn@3.2.3",
-  "dependencies": {
-    "@dhruv-m-patel/eslint-config-react": "workspace:^",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-storybook": "^0.6.15"
-  }
+  "packageManager": "yarn@3.2.3"
 }
