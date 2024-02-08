@@ -1,3 +1,25 @@
+const rules = {
+  'arrow-parens': 'off',
+  'max-len': [
+    'error',
+    {
+      code: 120,
+    },
+  ],
+  'import/prefer-default-export': 'off',
+  'object-curly-newline': 'off',
+  'no-restricted-exports': 'off',
+  indent: [
+    'error',
+    2,
+    {
+      SwitchCase: 1,
+    },
+  ],
+  'default-param-last': 'off',
+  'storybook/prefer-pascal-case': 'off',
+};
+
 module.exports = {
   extends: ['@dhruv-m-patel/eslint-config-base'],
   parserOptions: {
@@ -15,26 +37,7 @@ module.exports = {
       },
     },
   },
-  rules: {
-    'arrow-parens': 'off',
-    'max-len': [
-      'error',
-      {
-        code: 120,
-      },
-    ],
-    'import/prefer-default-export': 'off',
-    'object-curly-newline': 'off',
-    'no-restricted-exports': 'off',
-    indent: [
-      'error',
-      2,
-      {
-        SwitchCase: 1,
-      },
-    ],
-    'default-param-last': 'off',
-  },
+  rules,
   overrides: [
     // Overrides for typescript based react projects
     {
@@ -50,6 +53,7 @@ module.exports = {
         project: './tsconfig.json',
       },
       plugins: ['@typescript-eslint', 'react-hooks'],
+      rules,
     },
     // Overrides for javascript based react projects
     {
@@ -62,6 +66,7 @@ module.exports = {
       ],
       parser: '@babel/eslint-parser',
       plugins: ['@babel', 'react-hooks'],
+      rules,
     },
     // Overrides for stories and tests
     {
