@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.13
+
+### Patch Changes
+
+- 8c5485d: Publish packages again
+
 ## 1.2.12
 
 ### Patch Changes

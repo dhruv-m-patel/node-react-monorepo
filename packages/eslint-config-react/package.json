@@ -1,6 +1,6 @@
 {
   "name": "@dhruv-m-patel/eslint-config-react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "index.js",
   "description": "Basic code standards for react projects",
   "license": "MIT",
