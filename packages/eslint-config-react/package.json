@@ -4,9 +4,20 @@
   "main": "index.js",
   "description": "Basic code standards for react projects",
   "license": "MIT",
+  "engines": {
+    "node": ">= 18",
+    "npm": ">= 10",
+    "yarn": ">= 3"
+  },
   "dependencies": {
     "@dhruv-m-patel/eslint-config-base": "workspace:^",
     "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 8"
   },
   "publishConfig": {
     "access": "public"

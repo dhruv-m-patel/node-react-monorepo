@@ -2295,6 +2295,8 @@ __metadata:
     eslint-plugin-import: ^2.29.1
     eslint-plugin-prettier: ^4.2.1
     prettier: ^2.8.8
+  peerDependencies:
+    eslint: ">= 8"
   languageName: unknown
   linkType: soft
 
@@ -2303,7 +2305,10 @@ __metadata:
   resolution: "@dhruv-m-patel/eslint-config-react@workspace:packages/eslint-config-react"
   dependencies:
     "@dhruv-m-patel/eslint-config-base": "workspace:^"
+    eslint: ^8.56.0
     eslint-plugin-react-hooks: ^4.6.0
+  peerDependencies:
+    eslint: ">= 8"
   languageName: unknown
   linkType: soft
 
@@ -2339,7 +2344,7 @@ __metadata:
     uuid: ^8.3.2
     yamljs: ^0.3.0
   peerDependencies:
-    express: ^4
+    express: ">= 4"
   languageName: unknown
   linkType: soft
 
@@ -2399,10 +2404,10 @@ __metadata:
     ts-jest: ^27.0.3
     typescript: 4.3.4
   peerDependencies:
-    "@material-ui/core": ^4.11.2
-    "@material-ui/icons": ^4.11.2
-    react: ^16.14.0
-    react-dom: ^16.14.0
+    "@material-ui/core": ">= 4"
+    "@material-ui/icons": ">= 4"
+    react: ">= 16"
+    react-dom: ">= 16"
   languageName: unknown
   linkType: soft
 
