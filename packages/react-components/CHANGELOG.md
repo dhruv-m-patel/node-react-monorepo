@@ -1,23 +1,5 @@
 # Change Log
 
-## 1.2.13
-
-### Patch Changes
-
-- 70410ea: Fix workspace range in published packages
-
-## 1.2.14
-
-### Patch Changes
-
-- 8c5485d: Publish packages again
-
-## 1.2.13
-
-### Patch Changes
-
-- 17ba52c: Fix workspace range in published packages due to changesets/cli bug
-
 ## 1.2.12
 
 ### Patch Changes
