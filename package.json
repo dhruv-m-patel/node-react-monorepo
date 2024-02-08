@@ -3,6 +3,7 @@
   "private": true,
   "engines": {
     "node": ">= 18",
+    "npm": ">= 10",
     "yarn": ">= 3"
   },
   "workspaces": [

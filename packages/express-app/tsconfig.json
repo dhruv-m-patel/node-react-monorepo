@@ -5,10 +5,11 @@
     "baseUrl": "./",
     "outDir": "./build",
     "declaration": true,
-    "typeRoots": ["node_modules/@types", "./typings/"],
     "paths": {
       "src/*": ["./src/*"]
-    }
+    },
+    "typeRoots": ["node_modules/@types", "./typings/"],
+    "types": ["node", "jest", "@types/jest"]
   },
   "include": ["./src"],
   "exclude": ["./tests", "node_modules"]

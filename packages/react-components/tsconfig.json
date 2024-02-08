@@ -6,8 +6,6 @@
     "lib": ["ES2017", "DOM"],
     "jsx": "react",
     "moduleResolution": "Node",
-    "typeRoots": ["node_modules/@types", "./typings/"],
-    "types": ["node", "jest", "@types/jest"],
     "outDir": "build/esm",
     "rootDir": "./src",
     "declaration": true,
@@ -17,7 +15,9 @@
     "noImplicitThis": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": ["node_modules/@types", "./typings/"],
+    "types": ["node", "jest", "@types/jest"]
   },
   "include": ["./src"],
   "exclude": [

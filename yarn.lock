@@ -2167,7 +2167,9 @@ __metadata:
     "@types/node": ^18.14.0
     "@types/swagger-express-validator": ^0.0.0
     "@types/swagger-ui-dist": ^3.30.0
+    "@types/swagger-ui-express": ^4.1.6
     "@types/uuid": ^8.3.0
+    "@types/yamljs": ^0.2.34
     compression: ^1.7.4
     cookie-parser: ^1.4.5
     cors: ^2.8.5
@@ -5540,6 +5542,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/swagger-ui-express@npm:^4.1.6":
+  version: 4.1.6
+  resolution: "@types/swagger-ui-express@npm:4.1.6"
+  dependencies:
+    "@types/express": "*"
+    "@types/serve-static": "*"
+  checksum: c1c4b58b12f9261af70b6a7e6420649b4f0a0343071ae8b98483c5885cd596f4c25015991f91f3f7c7a0baa461e2d76029d64de79108a89d03f3f83abbe6bc58
+  languageName: node
+  linkType: hard
+
 "@types/tapable@npm:^1, @types/tapable@npm:^1.0.5":
   version: 1.0.12
   resolution: "@types/tapable@npm:1.0.12"
@@ -5599,6 +5611,13 @@ __metadata:
     anymatch: ^3.0.0
     source-map: ^0.6.0
   checksum: d3de65993ef3a7621f75548c2f6f509e8f87f586032238e999743d6067030655c67e38ec5f8b32e04fa5276c83bdfb7a761773bce0e6f28605da87e3fc388e3e
+  languageName: node
+  linkType: hard
+
+"@types/yamljs@npm:^0.2.34":
+  version: 0.2.34
+  resolution: "@types/yamljs@npm:0.2.34"
+  checksum: dafe13e88493dde2404464745a092bc579751828454aa2465985abcc2dbb7f59e40cb5204ecabfb515f4586b767216c656602f8eba7ac2c97cce391402ad727a
   languageName: node
   linkType: hard
 
