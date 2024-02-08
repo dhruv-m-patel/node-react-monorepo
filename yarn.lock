@@ -2406,8 +2406,8 @@ __metadata:
   peerDependencies:
     "@material-ui/core": ">= 4"
     "@material-ui/icons": ">= 4"
-    react: ">= 16"
-    react-dom: ">= 16"
+    react: ">= 16.14.0"
+    react-dom: ">= 16.14.0"
   languageName: unknown
   linkType: soft
 
@@ -2429,7 +2429,7 @@ __metadata:
     ts-jest: ^27.0.3
     typescript: 4.3.4
   peerDependencies:
-    react: ^16.14.0
+    react: ">= 16.14.0"
   languageName: unknown
   linkType: soft
 
@@ -2475,8 +2475,8 @@ __metadata:
     webpack-manifest-plugin: ^3.0.0
     webpack-node-externals: ^3.0.0
   peerDependencies:
-    express: ^4
-    webpack: ^4
+    express: ">= 4"
+    webpack: ">= 4"
   languageName: unknown
   linkType: soft
 
