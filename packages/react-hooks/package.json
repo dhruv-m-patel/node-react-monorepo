@@ -28,6 +28,7 @@
     "test:ci": "jest --silent --passWithNoTests --ci --coverage --coverageReporters=text --coverageReporters=text-summary"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.23.10",
     "@dhruv-m-patel/eslint-config-react": "workspace:^",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^11.2.2",

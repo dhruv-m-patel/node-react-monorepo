@@ -32,6 +32,7 @@
     "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.23.10",
     "@dhruv-m-patel/eslint-config-react": "workspace:^",
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",

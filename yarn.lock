@@ -194,7 +194,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/eslint-parser@npm:^7.23.3":
+"@babel/eslint-parser@npm:^7.23.10, @babel/eslint-parser@npm:^7.23.3":
   version: 7.23.10
   resolution: "@babel/eslint-parser@npm:7.23.10"
   dependencies:
@@ -2376,6 +2376,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dhruv-m-patel/react-components@workspace:packages/react-components"
   dependencies:
+    "@babel/eslint-parser": ^7.23.10
     "@dhruv-m-patel/eslint-config-react": "workspace:^"
     "@material-ui/core": ^4.11.2
     "@material-ui/icons": ^4.11.2
@@ -2415,6 +2416,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dhruv-m-patel/react-hooks@workspace:packages/react-hooks"
   dependencies:
+    "@babel/eslint-parser": ^7.23.10
     "@dhruv-m-patel/eslint-config-react": "workspace:^"
     "@testing-library/jest-dom": ^4.2.4
     "@testing-library/react": ^11.2.2
