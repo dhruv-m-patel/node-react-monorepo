@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.2.12
+
+### Patch Changes
+
+- 17ba52c: Fix workspace range in published packages due to changesets/cli bug
+
 ## 1.2.11
 
 ### Patch Changes
