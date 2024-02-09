@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.4.12
+
+### Patch Changes
+
+- c8e5f00: Fix workspace range in published packages
+
 ## 1.4.11
 
 ### Patch Changes

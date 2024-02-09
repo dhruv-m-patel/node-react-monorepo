@@ -1,5 +1,16 @@
 # @dhruv-m-patel/eslint-config-react
 
+## 1.1.0
+
+### Minor Changes
+
+- c8e5f00: Fix workspace range in published packages
+
+### Patch Changes
+
+- Updated dependencies [c8e5f00]
+  - @dhruv-m-patel/eslint-config-base@1.1.0
+
 ## 1.0.0
 
 ### Major Changes
