@@ -1,6 +1,6 @@
 {
   "name": "@dhruv-m-patel/express-app",
-  "version": "1.2.12",
+  "version": "1.2.11",
   "description": "A package to spin up a REST api server with express including swagger docs and health checks by default",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -31,7 +31,9 @@
     "@types/node": "^18.14.0",
     "@types/swagger-express-validator": "^0.0.0",
     "@types/swagger-ui-dist": "^3.30.0",
+    "@types/swagger-ui-express": "^4.1.6",
     "@types/uuid": "^8.3.0",
+    "@types/yamljs": "^0.2.34",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",

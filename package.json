@@ -3,6 +3,7 @@
   "private": true,
   "engines": {
     "node": ">= 18",
+    "npm": ">= 10",
     "yarn": ">= 3"
   },
   "workspaces": [
@@ -43,9 +44,10 @@
     "pretest": "jest --clearCache",
     "prettier:format": "prettier --write .",
     "prettier:verify": "prettier --check .",
+    "publish": "yarn workspaces foreach --from '@dhruv-m-patel/*' npm publish --access public && yarn changeset tag",
     "storybook": "lerna run storybook --stream",
     "build-storybook": "lerna run build-storybook --stream",
-    "version": "yarn changeset"
+    "version": "yarn changeset version"
   },
   "packageManager": "yarn@3.2.3"
 }
