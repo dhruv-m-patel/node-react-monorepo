@@ -3554,10 +3554,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sigstore/core@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@sigstore/core@npm:0.2.0"
-  checksum: e3226bcb8edf663001f11b6ac45190d21a9583a6bc7b6823deae171138a4f39fd1467f9c444f198e4e5930b4cf623035f5ebd0d9a864973818968977ecadb007
+"@sigstore/core@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@sigstore/core@npm:1.0.0"
+  checksum: ebbb4de8f6ef71f2c5812a5aaa01900db630c8783ecbac7a27fc1d18a5f1dce77c052d80510d778b29c257ed7a0c7de119e994868cd5689006ef33184b68ef8e
   languageName: node
   linkType: hard
 
@@ -3579,15 +3579,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sigstore/sign@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "@sigstore/sign@npm:2.2.1"
+"@sigstore/sign@npm:^2.2.2":
+  version: 2.2.2
+  resolution: "@sigstore/sign@npm:2.2.2"
   dependencies:
     "@sigstore/bundle": ^2.1.1
-    "@sigstore/core": ^0.2.0
+    "@sigstore/core": ^1.0.0
     "@sigstore/protobuf-specs": ^0.2.1
     make-fetch-happen: ^13.0.0
-  checksum: 198d6c0c0f1b1ff21546289478d26f9068ed7ead95f104bda1bdda8b2ce48393e784660a2c2d9ec1afe91260347ad677862493f1a80ca28e82b557cab219cc71
+  checksum: 59d53822c2f6dc247df144d8d586d3d6eee169f58964244153cbdfb56fd42aba63180694710230232fef25dcf8f1b27d541af4be56c6dad4d7fb52f5b271e204
   languageName: node
   linkType: hard
 
@@ -3611,14 +3611,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sigstore/verify@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@sigstore/verify@npm:0.1.0"
+"@sigstore/verify@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@sigstore/verify@npm:1.0.0"
   dependencies:
     "@sigstore/bundle": ^2.1.1
-    "@sigstore/core": ^0.2.0
+    "@sigstore/core": ^1.0.0
     "@sigstore/protobuf-specs": ^0.2.1
-  checksum: ddcd3482de4b9b01376b077574db05efa641fb26e9e9cd7cb9340e13767f6b1b39cbca47d80f2b5eacea88f49b99bcac957ff154c5c15461702f8c0f77d23541
+  checksum: 7e4d93bc0a6d7932ebe4794aab780b5c0e2eff02269aae9981b270900f23fc01bcf44d8ce00ce5d58825bde778f71a514885e12ee692d501f4f1cb9ad647aeb3
   languageName: node
   linkType: hard
 
@@ -9793,9 +9793,9 @@ __metadata:
   linkType: hard
 
 "electron-to-chromium@npm:^1.4.648":
-  version: 1.4.662
-  resolution: "electron-to-chromium@npm:1.4.662"
-  checksum: dceacdd7aa7ebf4802d5d44389d8bf098dcba3973219484a1900905a835ef9e262f121b6856c5f2151ccaa42209fb4ff67d3faa658e710e19069bd65936b859e
+  version: 1.4.665
+  resolution: "electron-to-chromium@npm:1.4.665"
+  checksum: 6c863300909a2712a79bd8a00ff2d3747fb72edf3dfda892449aabd42a12448e8e215e318d628421bbdfc7e4e3bc1fb38a81bbd530a71036bb86a75868e9eb8a
   languageName: node
   linkType: hard
 
@@ -19366,16 +19366,16 @@ __metadata:
   linkType: hard
 
 "sigstore@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "sigstore@npm:2.2.0"
+  version: 2.2.1
+  resolution: "sigstore@npm:2.2.1"
   dependencies:
     "@sigstore/bundle": ^2.1.1
-    "@sigstore/core": ^0.2.0
+    "@sigstore/core": ^1.0.0
     "@sigstore/protobuf-specs": ^0.2.1
-    "@sigstore/sign": ^2.2.1
+    "@sigstore/sign": ^2.2.2
     "@sigstore/tuf": ^2.3.0
-    "@sigstore/verify": ^0.1.0
-  checksum: 607a15624c5c7c0de3241e5c9ea4dda6495a55104fcadb85c3712dba54c154054a4de657038258c72748bcf207915ec0e338b8c6b3db6d07b5c904d4bcc35f44
+    "@sigstore/verify": ^1.0.0
+  checksum: 410d9e1113a6d620ffe4ed01564afb77fcc4b87acf836b2cd5d80d18d5c496c7afad2f8a6a31f0a980658be2aa8fb2d60a1f190d3a5d4d2352c45153469e962a
   languageName: node
   linkType: hard
 
@@ -19631,9 +19631,9 @@ __metadata:
   linkType: hard
 
 "spdx-license-ids@npm:^3.0.0":
-  version: 3.0.16
-  resolution: "spdx-license-ids@npm:3.0.16"
-  checksum: 5cdaa85aaa24bd02f9353a2e357b4df0a4f205cb35655f3fd0a5674a4fb77081f28ffd425379214bc3be2c2b7593ce1215df6bcc75884aeee0a9811207feabe2
+  version: 3.0.17
+  resolution: "spdx-license-ids@npm:3.0.17"
+  checksum: 0aba5d16292ff604dd20982200e23b4d425f6ba364765039bdbde2f6c956b9909fce1ad040a897916a5f87388e85e001f90cb64bf706b6e319f3908cfc445a59
   languageName: node
   linkType: hard
 
