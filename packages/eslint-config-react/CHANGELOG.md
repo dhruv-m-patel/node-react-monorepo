@@ -1,5 +1,13 @@
 # @dhruv-m-patel/eslint-config-react
 
+## 1.1.1
+
+### Patch Changes
+
+- 883a366: Update readme with updated info to use package
+- Updated dependencies [883a366]
+  - @dhruv-m-patel/eslint-config-base@1.1.1
+
 ## 1.1.0
 
 ### Minor Changes

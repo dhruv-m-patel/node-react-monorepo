@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.4.13
+
+### Patch Changes
+
+- 883a366: Update readme with updated info to use package
+
 ## 1.4.12
 
 ### Patch Changes
