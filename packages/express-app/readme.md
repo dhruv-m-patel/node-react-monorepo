@@ -2,7 +2,7 @@
 
 A package to spin up a REST api server with express including swagger docs and health checks by default
 
-![CI Status](https://github.com/dhruv-m-patel/node-react-monorepo/workflows/build/badge.svg)
+![CI Status](https://github.com/dhruv-m-patel/packages/workflows/build/badge.svg)
 
 Built with express and typescript providing following features:
 
@@ -14,7 +14,12 @@ Built with express and typescript providing following features:
 
 ### Using the package
 
-1. Install the package: `npm i -S @dhruv-m-patel/express-app`
+1. Install this package
+   ```bash
+   npm i -S @dhruv-m-patel/express-app
+   # OR
+   yarn add @dhruv-m-pate/express-app
+   ```
 
 2. Update your `app.ts` file (main application file) to export configuration as below:
 
