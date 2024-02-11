@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.3.0
+
+### Minor Changes
+
+- 1111b9a: Fix package dependencies
+
 ## 1.2.13
 
 ### Patch Changes
