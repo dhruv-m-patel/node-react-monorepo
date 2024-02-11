@@ -39,3 +39,5 @@ A library of custom react hooks for frontend projects
      );
    }
    ```
+
+Example CodeSandbox: https://codesandbox.io/p/sandbox/amazing-kirch-v4hpxf

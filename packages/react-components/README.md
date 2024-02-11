@@ -28,3 +28,5 @@ A library of React components for frontend projects
      );
    }
    ```
+
+Example CodeSandbox: https://codesandbox.io/p/sandbox/amazing-kirch-v4hpxf
