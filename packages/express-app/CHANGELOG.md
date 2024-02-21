@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.3.1
+
+### Patch Changes
+
+- 763f153: Add better support for consumer-apps with updated configuration options
+
 ## 1.3.0
 
 ### Minor Changes
