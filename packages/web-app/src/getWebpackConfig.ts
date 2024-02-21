@@ -4,6 +4,7 @@ import TerserPlugin from 'terser-webpack-plugin';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import LoadablePlugin from '@loadable/webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 export type Environment = 'development' | 'staging' | 'production';
 
@@ -18,10 +19,10 @@ export default function getWebpackConfig(
     mode: environment || 'production',
     entry: {
       client: !isDevelopment
-        ? path.resolve(basePath, 'src/client/index.ts')
+        ? path.resolve(basePath, 'src/client')
         : [
-            'webpack-hot-middleware/client?reload=true',
-            path.resolve(basePath, 'src/client/index.ts'),
+            'webpack-hot-middleware/client',
+            path.resolve(basePath, 'src/client'),
           ],
     },
     output: {
@@ -34,14 +35,7 @@ export default function getWebpackConfig(
         {
           test: /\.jsx$/,
           exclude: /node_modules/,
-          use: [
-            {
-              loader: 'babel-loader',
-              options: {
-                presets: ['@babel/preset-react'],
-              },
-            },
-          ],
+          loader: 'babel-loader',
         },
         {
           test: /\.tsx?$/,
@@ -57,15 +51,40 @@ export default function getWebpackConfig(
           test: /\.svg$/,
           exclude: /node_modules/,
           use: [
-            {
-              loader: 'babel-loader',
-              options: {
-                presets: ['@babel/preset-react'],
-              },
-            },
+            'babel-loader',
             {
               loader: 'react-svg-loader',
               options: { jsx: true },
+            },
+          ],
+        },
+        {
+          test: /\.css$/,
+          use: [
+            isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+                modules: {
+                  localIdentName: '[name]__[local]___[hash:base64:5]',
+                },
+                importLoaders: 1,
+              },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: () => [
+                  // eslint-disable-next-line global-require
+                  require('postcss-import'),
+                  // eslint-disable-next-line global-require
+                  require('postcss-preset-env')({
+                    browsers: '> 0.5%, last 2 versions, Firefox ESR, not dead',
+                    stage: 1,
+                  }),
+                ],
+              },
             },
           ],
         },

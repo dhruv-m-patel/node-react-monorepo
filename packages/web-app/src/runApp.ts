@@ -3,14 +3,18 @@ import express from 'express';
 export interface AppStartupOptions {
   port: number;
   appName?: string;
-  setup?: () => Promise<void>;
+  setup?: () => void | Promise<void>;
   callback?: () => void;
+}
+
+function isPromise(value?: any) {
+  return Boolean(value && typeof value.then === 'function');
 }
 
 export default function runApp(
   app: express.Application,
   options: AppStartupOptions = {
-    port: 5000,
+    port: 3000,
     setup: undefined,
     callback: undefined,
   }
@@ -27,10 +31,12 @@ export default function runApp(
   };
 
   if (setup && typeof setup === 'function') {
-    setup().then(() => {
-      startApp();
-    });
-  } else {
-    startApp();
+    if (isPromise(setup)) {
+      setup()?.then(() => {
+        startApp();
+      });
+      return;
+    }
   }
+  startApp();
 }
