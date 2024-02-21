@@ -38,6 +38,7 @@
     "@types/express-session": "^1.17.3",
     "@types/loadable__webpack-plugin": "^5.7.2",
     "@types/morgan": "^1.9.2",
+    "@types/optimize-css-assets-webpack-plugin": "^5.0.8",
     "@types/supertest": "^2.0.11",
     "@types/uuid": "^8.3.0",
     "babel-loader": "^8.3.0",
