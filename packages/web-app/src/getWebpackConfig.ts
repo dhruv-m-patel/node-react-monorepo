@@ -5,6 +5,7 @@ import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import LoadablePlugin from '@loadable/webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 
 export type Environment = 'development' | 'staging' | 'production';
 
@@ -33,7 +34,7 @@ export default function getWebpackConfig(
     module: {
       rules: [
         {
-          test: /\.jsx$/,
+          test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
         },
@@ -114,6 +115,13 @@ export default function getWebpackConfig(
             sourceMap: true,
             cache: true,
             parallel: true,
+          }),
+          new OptimizeCSSAssetsPlugin({
+            cssProcessorOptions: {
+              map: {
+                inline: false,
+              },
+            },
           }),
         ],
       }),
