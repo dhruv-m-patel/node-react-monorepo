@@ -113,10 +113,12 @@ export default function configureApp(options: AppOptions) {
       })
     );
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    app.use(webpackHotMiddleware(compiler, {
-      reload: true,
-      heartbeat: 10000,
-    }));
+    app.use(
+      webpackHotMiddleware(compiler, {
+        reload: true,
+        heartbeat: 10000,
+      })
+    );
   } else {
     // If running in non-development mode, expose the public path as static
     app.use(express.static(wpconfig.output.path));
