@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.5.2
+
+### Patch Changes
+
+- a4103e3: Fix webpack configuration for jsx parsing, add css optimization support
+
 ## 1.5.1
 
 ### Patch Changes
