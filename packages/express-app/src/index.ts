@@ -25,7 +25,7 @@ export interface AppConfigOptions {
     specType: 'openapi' | 'swagger';
     validateResponses?: boolean;
   };
-  setup: (app: express.Application) => void;
+  setup?: (app: express.Application) => void | Promise<void>;
 }
 
 export interface ResponseError extends Error {
@@ -35,6 +35,10 @@ export interface ResponseError extends Error {
 
 export interface Request extends ExpressRequest {
   id?: string;
+}
+
+function isPromise(value?: any) {
+  return Boolean(value && typeof value.then === 'function');
 }
 
 function finalErrorHandler(
@@ -118,12 +122,16 @@ export function configureApp(options: AppConfigOptions): express.Application {
   });
 
   // Allow consumer to run their route setup
-  setup(app);
-
-  // Add final error handler by default as the last middleware
-  // to handle unhandled errors from express routes
+  if (setup && typeof setup === 'function') {
+    if (isPromise(setup)) {
+      setup(app)?.then(() => {
+        app.use(finalErrorHandler);
+      });
+      return app;
+    }
+    setup(app);
+  }
   app.use(finalErrorHandler);
-
   return app;
 }
 
@@ -131,7 +139,7 @@ export interface AppRunOptions {
   useClusteredStart?: boolean;
   port?: number;
   appName?: string;
-  setup?: () => Promise<void>;
+  setup?: () => void | Promise<void>;
   callback?: () => void;
 }
 
@@ -177,9 +185,13 @@ export function runApp(
   };
 
   if (setup && typeof setup === 'function') {
-    setup().then(() => {
-      startApp();
-    });
+    if (isPromise(setup)) {
+      setup()?.then(() => {
+        startApp();
+      });
+      return;
+    }
+    setup();
   } else {
     startApp();
   }

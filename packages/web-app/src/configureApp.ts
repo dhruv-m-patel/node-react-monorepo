@@ -19,6 +19,10 @@ export interface ResponseError extends Error {
   status?: number;
 }
 
+function isPromise(value?: any) {
+  return Boolean(value && typeof value.then === 'function');
+}
+
 function finalErrorHandler(
   err: ResponseError,
   req: Request,
@@ -44,7 +48,7 @@ export interface AppOptions {
     staticDirectories?: Array<string>;
   };
   sessionSecret?: string;
-  setup: (app: express.Application) => void;
+  setup?: (app: express.Application) => void | Promise<void>;
 }
 
 export default function configureApp(options: AppOptions) {
@@ -105,10 +109,14 @@ export default function configureApp(options: AppOptions) {
       webpackDevMiddleware(compiler, {
         stats: { colors: true },
         publicPath: wpconfig.output.publicPath,
+        serverSideRender: true,
       })
     );
     // eslint-disable-next-line @typescript-eslint/no-var-requires
-    app.use(webpackHotMiddleware(compiler));
+    app.use(webpackHotMiddleware(compiler, {
+      reload: true,
+      heartbeat: 10000,
+    }));
   } else {
     // If running in non-development mode, expose the public path as static
     app.use(express.static(wpconfig.output.path));
@@ -122,10 +130,16 @@ export default function configureApp(options: AppOptions) {
   );
 
   // Allow consumer to run its own setup adding additional things for server app
-  setup(app);
-
+  if (setup && typeof setup === 'function') {
+    if (isPromise(app)) {
+      setup(app)?.then(() => {
+        app.use(finalErrorHandler);
+      });
+      return app;
+    }
+    setup(app);
+  }
   // Add final error handler for api endpoints
   app.use(finalErrorHandler);
-
   return app;
 }
