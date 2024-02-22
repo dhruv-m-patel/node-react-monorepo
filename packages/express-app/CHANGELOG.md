@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.4.0
+
+### Minor Changes
+
+- 855ee94: Add babel support
+
 ## 1.3.1
 
 ### Patch Changes

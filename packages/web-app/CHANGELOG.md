@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.6.0
+
+### Minor Changes
+
+- 855ee94: Add babel support
+
 ## 1.5.2
 
 ### Patch Changes
