@@ -26,7 +26,7 @@ export interface AppConfigOptions {
     validateResponses?: boolean;
   };
   setup?: (app: express.Application) => void | Promise<void>;
-  useBabel: false;
+  useBabel?: false;
 }
 
 export interface ResponseError extends Error {

@@ -49,7 +49,7 @@ export interface AppOptions {
   };
   sessionSecret?: string;
   setup?: (app: express.Application) => void | Promise<void>;
-  useBabel: false;
+  useBabel?: false;
 }
 
 export default function configureApp(options: AppOptions) {
