@@ -49,6 +49,7 @@ export interface AppOptions {
   };
   sessionSecret?: string;
   setup?: (app: express.Application) => void | Promise<void>;
+  useBabel: false;
 }
 
 export default function configureApp(options: AppOptions) {
@@ -56,7 +57,18 @@ export default function configureApp(options: AppOptions) {
     setup,
     paths: { routes, staticDirectories, webpackConfig },
     sessionSecret,
+    useBabel,
   } = options;
+
+  // Add support for babel if requested by caller app
+  if (useBabel) {
+    // eslint-disable-next-line global-require
+    require('@babel/register')({
+      root: process.cwd(),
+      ignore: [/node_modules/],
+      only: [process.cwd()],
+    });
+  }
 
   const app: Application = express();
   app.disable('x-powered-by');

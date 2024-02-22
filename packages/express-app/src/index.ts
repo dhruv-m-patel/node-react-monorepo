@@ -26,6 +26,7 @@ export interface AppConfigOptions {
     validateResponses?: boolean;
   };
   setup?: (app: express.Application) => void | Promise<void>;
+  useBabel: false;
 }
 
 export interface ResponseError extends Error {
@@ -66,14 +67,23 @@ process.on('exit', (code) => {
 });
 
 export function configureApp(options: AppConfigOptions): express.Application {
+  const { appName = 'Service', apiOptions, setup, useBabel } = options;
+  // Add support for babel if requested by caller app
+  if (useBabel) {
+    // eslint-disable-next-line global-require
+    require('@babel/register')({
+      root: process.cwd(),
+      ignore: [/node_modules/],
+      only: [process.cwd()],
+    });
+  }
+
   const app: express.Application = express();
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
   app.use(cors());
   app.use(compression());
   app.use(cookieParser());
-
-  const { appName = 'Service', apiOptions, setup } = options;
 
   // Add service discovery to APIs
   if (apiOptions && apiOptions.apiSpec) {
