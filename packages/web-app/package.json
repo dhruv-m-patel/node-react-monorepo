@@ -16,6 +16,7 @@
     "test:changed": "jest --silent --passWithNoTests --runInBand --onlyChanged"
   },
   "dependencies": {
+    "@babel/register": "^7.23.7",
     "@loadable/webpack-plugin": "^5.14.0",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",

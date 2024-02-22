@@ -1725,7 +1725,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/register@npm:^7.12.1":
+"@babel/register@npm:^7.12.1, @babel/register@npm:^7.23.7":
   version: 7.23.7
   resolution: "@babel/register@npm:7.23.7"
   dependencies:
@@ -2591,6 +2591,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@dhruv-m-patel/express-app@workspace:packages/express-app"
   dependencies:
+    "@babel/register": ^7.23.7
     "@dhruv-m-patel/eslint-config-base": "workspace:^"
     "@types/compression": ^1.7.0
     "@types/cookie-parser": ^1.4.2
@@ -2712,6 +2713,7 @@ __metadata:
   resolution: "@dhruv-m-patel/web-app@workspace:packages/web-app"
   dependencies:
     "@babel/core": ^7.4.5
+    "@babel/register": ^7.23.7
     "@dhruv-m-patel/eslint-config-base": "workspace:^"
     "@loadable/webpack-plugin": ^5.14.0
     "@types/compression": ^1.7.0
