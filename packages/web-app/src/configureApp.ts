@@ -49,7 +49,7 @@ export interface AppOptions {
   };
   sessionSecret?: string;
   setup?: (app: express.Application) => void | Promise<void>;
-  useBabel?: false;
+  useBabel?: Boolean;
 }
 
 export default function configureApp(options: AppOptions) {
@@ -57,7 +57,7 @@ export default function configureApp(options: AppOptions) {
     setup,
     paths: { routes, staticDirectories, webpackConfig },
     sessionSecret,
-    useBabel,
+    useBabel = false,
   } = options;
 
   // Add support for babel if requested by caller app
