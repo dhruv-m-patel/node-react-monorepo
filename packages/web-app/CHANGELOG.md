@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.7.0
+
+### Minor Changes
+
+- 38321e2: Upgrade to webpack v5
+
 ## 1.6.0
 
 ### Minor Changes
