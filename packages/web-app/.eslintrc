@@ -9,6 +9,7 @@
     "import/export": "off",
     "import/no-extraneous-dependencies": "off",
     "consistent-return": "off",
-    "no-return-assign": "off"
+    "no-return-assign": "off",
+    "operator-linebreak": "off"
   }
 }

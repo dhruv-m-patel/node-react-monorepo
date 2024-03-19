@@ -5,7 +5,7 @@ import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import LoadablePlugin from '@loadable/webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 export type Environment = 'development' | 'staging' | 'production';
 
@@ -103,7 +103,8 @@ export default function getWebpackConfig(
     plugins: [
       new WebpackManifestPlugin({}),
       new LoadablePlugin({ writeToDisk: true }),
-      isProduction && new MiniCssExtractPlugin({
+      isProduction &&
+        new MiniCssExtractPlugin({
           filename: '[name].[contenthash].css',
         }),
       isDevelopment && new webpack.HotModuleReplacementPlugin(),
