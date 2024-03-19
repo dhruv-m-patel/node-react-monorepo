@@ -52,7 +52,7 @@ export interface AppOptions {
   useBabel?: Boolean;
 }
 
-export default function configureApp(options: AppOptions) {
+export default async function configureApp(options: AppOptions) {
   const {
     setup,
     paths: { routes, staticDirectories, webpackConfig },
@@ -127,8 +127,11 @@ export default function configureApp(options: AppOptions) {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     app.use(
       webpackHotMiddleware(compiler, {
+        path: '/__webpack_hmr',
+        heartbeat: 10 * 1000,
+        // @ts-ignore
+        dynamicPublicPath: true,
         reload: true,
-        heartbeat: 10000,
       })
     );
   } else {

@@ -5,7 +5,7 @@ import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import LoadablePlugin from '@loadable/webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 export type Environment = 'development' | 'staging' | 'production';
 
@@ -18,13 +18,12 @@ export default function getWebpackConfig(
 
   return {
     mode: environment || 'production',
+    devtool: 'inline-source-map',
     entry: {
-      client: !isDevelopment
-        ? path.resolve(basePath, 'src/client')
-        : [
-            'webpack-hot-middleware/client',
-            path.resolve(basePath, 'src/client'),
-          ],
+      client: [
+        isDevelopment && 'webpack-hot-middleware/client?reload=true',
+        path.resolve(basePath, 'src/client'),
+      ].filter(Boolean),
     },
     output: {
       filename: isProduction ? '[name].[chunkhash].js' : '[name].bundle.js',
@@ -34,19 +33,25 @@ export default function getWebpackConfig(
     module: {
       rules: [
         {
+          test: /\.tsx?$/,
+          exclude: /node_modules/,
+          use: [
+            'babel-loader',
+            {
+              loader: 'ts-loader',
+              options: {
+                compilerOptions: {
+                  sourceMap: true,
+                  module: 'esnext',
+                },
+              },
+            },
+          ],
+        },
+        {
           test: /\.jsx?$/,
           exclude: /node_modules/,
           loader: 'babel-loader',
-        },
-        {
-          test: /\.tsx?$/,
-          exclude: /node_modules/,
-          loader: 'ts-loader',
-          options: {
-            compilerOptions: {
-              module: 'esnext',
-            },
-          },
         },
         {
           test: /\.svg$/,
@@ -81,7 +86,11 @@ export default function getWebpackConfig(
                   require('postcss-import'),
                   // eslint-disable-next-line global-require
                   require('postcss-preset-env')({
-                    browsers: '> 0.5%, last 2 versions, Firefox ESR, not dead',
+                    // If you don't set this, you get the GB preset default,
+                    // which is fine in most cases
+                    browsers: process.env.BROWSER_SUPPORT,
+                    // Setting to stage 1 for now so we don't break functionality
+                    // that worked with postcss-cssnext
                     stage: 1,
                   }),
                 ],
@@ -92,11 +101,16 @@ export default function getWebpackConfig(
       ],
     },
     plugins: [
-      new WebpackManifestPlugin(),
+      new WebpackManifestPlugin({}),
       new LoadablePlugin({ writeToDisk: true }),
+      isProduction && new MiniCssExtractPlugin({
+          filename: '[name].[contenthash].css',
+        }),
       isDevelopment && new webpack.HotModuleReplacementPlugin(),
+      isDevelopment && new webpack.NoEmitOnErrorsPlugin(),
     ].filter(Boolean),
     optimization: {
+      moduleIds: 'named',
       splitChunks: {
         cacheGroups: {
           vendor: {
@@ -107,33 +121,41 @@ export default function getWebpackConfig(
           },
         },
       },
-      namedModules: true,
-      noEmitOnErrors: true,
       ...(isProduction && {
         minimizer: [
           new TerserPlugin({
-            sourceMap: true,
-            cache: true,
             parallel: true,
-          }),
-          new OptimizeCSSAssetsPlugin({
-            cssProcessorOptions: {
-              map: {
-                inline: false,
-              },
+            terserOptions: {
+              sourceMap: true,
+              compress: true,
+              mangle: true,
             },
+          }),
+          new CssMinimizerPlugin({
+            minimizerOptions: {
+              preset: [
+                'default',
+                {
+                  discardComments: true,
+                },
+              ],
+            },
+            minify: CssMinimizerPlugin.cleanCssMinify,
           }),
         ],
       }),
     },
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+      extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
     },
-    devtool: isProduction ? 'cheap-source-map' : false,
-    performance: {
-      maxAssetSize: 500000, // in bytes
-      hints: false,
-    },
+    ...(isProduction && {
+      devtool: 'source-map',
+      performance: {
+        maxAssetSize: 200 * 1000, // Max 200kB per bundle
+        maxEntrypointSize: 300 * 1000, // Max 300kB per bundle
+        hints: 'warning',
+      },
+    }),
     externals: nodeExternals(),
   };
 }

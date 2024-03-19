@@ -11,7 +11,7 @@ function isPromise(value?: any) {
   return Boolean(value && typeof value.then === 'function');
 }
 
-export default function runApp(
+export default async function runApp(
   app: express.Application,
   options: AppStartupOptions = {
     port: 3000,
