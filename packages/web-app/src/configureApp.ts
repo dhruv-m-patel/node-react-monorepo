@@ -49,15 +49,15 @@ export interface AppOptions {
   };
   sessionSecret?: string;
   setup?: (app: express.Application) => void | Promise<void>;
-  useBabel?: false;
+  useBabel?: Boolean;
 }
 
-export default function configureApp(options: AppOptions) {
+export default async function configureApp(options: AppOptions) {
   const {
     setup,
     paths: { routes, staticDirectories, webpackConfig },
     sessionSecret,
-    useBabel,
+    useBabel = false,
   } = options;
 
   // Add support for babel if requested by caller app
@@ -127,8 +127,11 @@ export default function configureApp(options: AppOptions) {
     // eslint-disable-next-line @typescript-eslint/no-var-requires
     app.use(
       webpackHotMiddleware(compiler, {
+        path: '/__webpack_hmr',
+        heartbeat: 10 * 1000,
+        // @ts-ignore
+        dynamicPublicPath: true,
         reload: true,
-        heartbeat: 10000,
       })
     );
   } else {
