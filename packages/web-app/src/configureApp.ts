@@ -1,4 +1,4 @@
-import express, { Application, Request, Response, NextFunction } from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import enrouten from 'express-enrouten';
@@ -10,21 +10,14 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import 'fetch-everywhere';
-
-export interface ExtendedRequest extends Request {
-  id?: string;
-}
-
-export interface ResponseError extends Error {
-  status?: number;
-}
+import { WebAppError, WebApplication, WebRequest } from './types';
 
 function isPromise(value?: any) {
   return Boolean(value && typeof value.then === 'function');
 }
 
 function finalErrorHandler(
-  err: ResponseError,
+  err: WebAppError,
   req: Request,
   res: Response,
   next: NextFunction
@@ -48,11 +41,11 @@ export interface AppOptions {
     staticDirectories?: Array<string>;
   };
   sessionSecret?: string;
-  setup?: (app: express.Application) => void | Promise<void>;
+  setup?: (app: WebApplication) => void | Promise<void>;
   useBabel?: Boolean;
 }
 
-export default async function configureApp(options: AppOptions) {
+export default async function configureApp(options: AppOptions): Promise<WebApplication> {
   const {
     setup,
     paths: { routes, staticDirectories, webpackConfig },
@@ -70,7 +63,7 @@ export default async function configureApp(options: AppOptions) {
     });
   }
 
-  const app: Application = express();
+  const app: WebApplication = express();
   app.disable('x-powered-by');
   app.use(cookieParser());
   app.use(express.urlencoded({ extended: true }));
@@ -80,7 +73,7 @@ export default async function configureApp(options: AppOptions) {
   app.use(cors());
 
   // Enable distributed tracing through request identifiers
-  app.use((req: ExtendedRequest, res: Response, next: NextFunction) => {
+  app.use((req: WebRequest, res: Response, next: NextFunction) => {
     if (!req.id) {
       req.id = uuidV4();
       next();

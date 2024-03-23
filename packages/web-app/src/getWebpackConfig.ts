@@ -6,8 +6,7 @@ import LoadablePlugin from '@loadable/webpack-plugin';
 import nodeExternals from 'webpack-node-externals';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
-
-export type Environment = 'development' | 'staging' | 'production';
+import { Environment } from './types';
 
 export default function getWebpackConfig(
   environment: Environment,
