@@ -1,11 +1,5 @@
 import express from 'express';
-
-export interface AppStartupOptions {
-  port: number;
-  appName?: string;
-  setup?: () => void | Promise<void>;
-  callback?: () => void;
-}
+import { AppStartupOptions } from './types';
 
 function isPromise(value?: any) {
   return Boolean(value && typeof value.then === 'function');
