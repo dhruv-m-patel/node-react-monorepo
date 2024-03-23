@@ -1,10 +1,6 @@
 import cluster from 'cluster';
 import os from 'os';
-import express, {
-  Request as ExpressRequest,
-  Response,
-  NextFunction,
-} from 'express';
+import express, { Response, NextFunction } from 'express';
 import cors from 'cors';
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
@@ -17,34 +13,20 @@ import * as ExpressOpenApiValidator from 'express-openapi-validator';
 import process from 'process';
 import jsyaml from 'js-yaml';
 import yamljs from 'yamljs';
-
-export interface AppConfigOptions {
-  appName?: string;
-  apiOptions?: {
-    apiSpec: string;
-    specType: 'openapi' | 'swagger';
-    validateResponses?: boolean;
-  };
-  setup?: (app: express.Application) => void | Promise<void>;
-  useBabel?: false;
-}
-
-export interface ResponseError extends Error {
-  // OpenAPI validations specify this; other errors do not.
-  status?: number;
-}
-
-export interface Request extends ExpressRequest {
-  id?: string;
-}
+import {
+  ApiError,
+  ApiRequest,
+  ApiStartupOptions,
+  AppConfigOptions,
+} from './types';
 
 function isPromise(value?: any) {
   return Boolean(value && typeof value.then === 'function');
 }
 
 function finalErrorHandler(
-  err: ResponseError,
-  req: Request,
+  err: ApiError,
+  req: ApiRequest,
   res: Response,
   next: NextFunction
 ) {
@@ -66,7 +48,11 @@ process.on('exit', (code) => {
   console.log(`Process ${process.pid} is exiting with exit code ${code}`);
 });
 
-export function configureApp(options: AppConfigOptions): express.Application {
+export function configureApp(
+  options: AppConfigOptions = {
+    useBabel: false,
+  }
+): express.Application {
   const { appName = 'Service', apiOptions, setup, useBabel } = options;
   // Add support for babel if requested by caller app
   if (useBabel) {
@@ -119,7 +105,7 @@ export function configureApp(options: AppConfigOptions): express.Application {
   }
 
   // Add traceability to all requests assigning them a unique identifier
-  app.use((req: Request, res: Response, next: NextFunction) => {
+  app.use((req: ApiRequest, res: Response, next: NextFunction) => {
     if (!req.id) {
       req.id = uuid.v4();
     }
@@ -127,7 +113,7 @@ export function configureApp(options: AppConfigOptions): express.Application {
   });
 
   // Add health check by default on all web and api applications
-  app.get('/health', (req: Request, res: Response) => {
+  app.get('/health', (req: ApiRequest, res: Response) => {
     res.status(200).send(`${appName} is healthy`);
   });
 
@@ -141,21 +127,14 @@ export function configureApp(options: AppConfigOptions): express.Application {
     }
     setup(app);
   }
+
   app.use(finalErrorHandler);
   return app;
 }
 
-export interface AppRunOptions {
-  useClusteredStart?: boolean;
-  port?: number;
-  appName?: string;
-  setup?: () => void | Promise<void>;
-  callback?: () => void;
-}
-
 export function runApp(
   app: express.Application,
-  options: AppRunOptions = {
+  options: ApiStartupOptions = {
     useClusteredStart: false,
     port: 5000,
     appName: 'express-app',
@@ -165,7 +144,7 @@ export function runApp(
 
   const startApp = () => {
     if (useClusteredStart) {
-      if (cluster.isMaster) {
+      if (cluster.isPrimary) {
         console.log(`Main server process id: ${process.pid}`);
         const cpus = os.cpus();
         console.log(
@@ -206,3 +185,5 @@ export function runApp(
     startApp();
   }
 }
+
+export * from './types';
