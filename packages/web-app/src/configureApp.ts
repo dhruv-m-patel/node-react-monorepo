@@ -45,7 +45,9 @@ export interface AppOptions {
   useBabel?: Boolean;
 }
 
-export default async function configureApp(options: AppOptions): Promise<WebApplication> {
+export default async function configureApp(
+  options: AppOptions
+): Promise<WebApplication> {
   const {
     setup,
     paths: { routes, staticDirectories, webpackConfig },

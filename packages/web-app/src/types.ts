@@ -3,7 +3,7 @@ import { Application, Locals, Request } from 'express';
 export interface WebRequestLocals extends Locals {
   config?: {
     get: (path: string) => any;
-  }
+  };
 }
 
 export interface WebApplication extends Application {
